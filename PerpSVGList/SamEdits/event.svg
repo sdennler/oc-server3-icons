@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   viewBox="0 0 32 32"
+   version="1.1"
+   id="svg16"
+   sodipodi:docname="event.svg"
+   inkscape:version="1.1.1 (3bf5ae0d25, 2021-09-20)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview18"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     showgrid="false"
+     inkscape:zoom="19.6875"
+     inkscape:cx="16"
+     inkscape:cy="15.974603"
+     inkscape:window-width="2560"
+     inkscape:window-height="1411"
+     inkscape:window-x="1"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg16" />
+  <defs
+     id="defs4">
+    <style
+       id="style2">.cls-2{fill:#5281a9;}.cls-3{fill:none;opacity:0.5;}</style>
+  </defs>
+  <g
+     id="Icons">
+    <path
+       class="cls-2"
+       d="m 3.88,14.44 c 0,4.61 3.75,8.49 8.86,9.69 l 5.25,6 -0.21,-5.72 c 5.94,-0.68 10.53,-4.88 10.53,-10 C 28.31,8.84 22.84,4.32 16.09,4.32 9.34,4.32 3.88,8.87 3.88,14.44 Z m 10.37,-1.26 a 1,1 0 0 1 -2,0 v -2.63 a 1,1 0 0 1 2,0 z m 6,0 a 1,1 0 0 1 -2,0 v -2.63 a 1,1 0 0 1 2,0 z m -9,3.16 a 1,1 0 0 1 1.32,0.52 c 0.5,1.14 1.68,1.72 3.53,1.72 1.85,0 3,-0.58 3.52,-1.72 a 1,1 0 1 1 1.83,0.8 c -0.58,1.33 -2,2.92 -5.35,2.92 -3.35,0 -4.78,-1.58 -5.37,-2.92 a 1,1 0 0 1 0.52,-1.32 z"
+       id="path9" />
+  </g>
+  <g
+     id="Boxen_32x32_transparent"
+     data-name="Boxen 32x32 transparent">
+    <rect
+       class="cls-3"
+       width="32"
+       height="32"
+       id="rect12"
+       x="0"
+       y="0" />
+  </g>
+</svg>
