@@ -113,12 +113,43 @@ $duplicated = [
     'OC_Icons_Dez_2021_+_Attributs/cacheicon/22x20-traditional.svg' => 'OC_Icons_Dez_2021_+_Attributs/cacheicon/traditional-s.svg',
     'OC_Icons_Dez_2021_+_Attributs/cacheicon/cache/22x22-traditional.svg' => 'OC_Icons_Dez_2021_+_Attributs/cacheicon/traditional-s.svg',
     'OC_Icons_Dez_2021_+_Attributs/cacheicon/map-traditional.svg' => 'OC_Icons_Dez_2021_+_Attributs/cacheicon/traditional-s.svg',
-    '' => '',
+    'OC_Icons_Dez_2021_+_Attributs/log/16x16-needs-maintenance.svg' => 'OC_Icons_Dez_2021_+_Attributs/cachestatus/needs-maintenance.svg',
+    'OC_Icons_Dez_2021_+_Attributs/misc/32x32-pictures.svg' => 'OC_Icons_Dez_2021_+_Attributs/viewcache/16x16-pictures.svg',
+    'OC_Icons_Dez_2021_+_Attributs/description/32x22-profile.svg' => 'OC_Icons_Dez_2021_+_Attributs/misc/32x32-profile.svg',
+    'OC_Icons_Dez_2021_+_Attributs/description/32x32-profile.svg' => 'OC_Icons_Dez_2021_+_Attributs/misc/32x32-profile.svg',
+    'OC_Icons_Dez_2021_+_Attributs/profile/32x22-profile.svg	' => 'OC_Icons_Dez_2021_+_Attributs/misc/32x32-profile.svg',
+    'OC_Icons_Dez_2021_+_Attributs/profile/32x32-profile.svg' => 'OC_Icons_Dez_2021_+_Attributs/misc/32x32-profile.svg',
+    'OC_Icons_Dez_2021_+_Attributs/media/16x16-slack.svg' => 'OC_Icons_Dez_2021_+_Attributs/media/32x32-slack.svg',
+    'OC_Icons_Dez_2021_+_Attributs/media/16x16-twitter.svg' => 'OC_Icons_Dez_2021_+_Attributs/media/32x32-twitter.svg',
+    'OC_Icons_Dez_2021_+_Attributs/media/32x32-twitter.svg' => 'OC_Icons_Dez_2021_+_Attributs/media/32x32-twitter.svg',
+    'OC_Icons_Dez_2021_+_Attributs/misc/32x32-world.svg' => 'OC_Icons_Dez_2021_+_Attributs/viewcache/world.svg',
+    'OC_Icons_Dez_2021_+_Attributs/navigation/15x15-close.svg' => 'OC_Icons_Dez_2021_+_Attributs/navigation/23x23-close.svg',
+    'OC_Icons_Dez_2021_+_Attributs/navigation/19x19-close.svg' => 'OC_Icons_Dez_2021_+_Attributs/navigation/23x23-close.svg',
+    'OC_Icons_Dez_2021_+_Attributs/log/16x16-disabled.svg' => 'OC_Icons_Dez_2021_+_Attributs/cachestatus/32x32-disabled.svg',
+    'OC_Icons_Dez_2021_+_Attributs/profile/22x22-email.svg' => 'OC_Icons_Dez_2021_+_Attributs/misc/16x16-email.svg',
+    'OC_Icons_Dez_2021_+_Attributs/media/32x32-facebook.svg' => 'OC_Icons_Dez_2021_+_Attributs/media/16x16-facebook.svg',
+    'OC_Icons_Dez_2021_+_Attributs/description/16x16-rss.svg' => 'OC_Icons_Dez_2021_+_Attributs/description/32x32-rss.svg',
+    'OC_Icons_Dez_2021_+_Attributs/media/16x16-feed.svg' => 'OC_Icons_Dez_2021_+_Attributs/description/32x32-rss.svg',
+    'OC_Icons_Dez_2021_+_Attributs/media/22x22-feed.svg' => 'OC_Icons_Dez_2021_+_Attributs/description/32x32-rss.svg',
+    'OC_Icons_Dez_2021_+_Attributs/media/32x32-feed.svg' => 'OC_Icons_Dez_2021_+_Attributs/description/32x32-rss.svg',
+    'OC_Icons_Dez_2021_+_Attributs/map/35x35-fullscreen.svg' => 'OC_Icons_Dez_2021_+_Attributs/map/48x48-fullscreen.svg	',
+    'OC_Icons_Dez_2021_+_Attributs/description/32x32-geokret.svg' => 'OC_Icons_Dez_2021_+_Attributs/description/22x22-geokret.svg',
+    'OC_Icons_Dez_2021_+_Attributs/misc/16x16-home.svg' => 'OC_Icons_Dez_2021_+_Attributs/misc/32x32-home.svg',
+    'OC_Icons_Dez_2021_+_Attributs/profile/32x32-home.svg' => 'OC_Icons_Dez_2021_+_Attributs/misc/32x32-home.svg',
+    'OC_Icons_Dez_2021_+_Attributs/profile/22x22-home.svg' => 'OC_Icons_Dez_2021_+_Attributs/misc/32x32-home.svg',
+    'OC_Icons_Dez_2021_+_Attributs/media/16x16-Instagram.svg' => 'OC_Icons_Dez_2021_+_Attributs/media/32x32-Instagram.svg',
+    'OC_Icons_Dez_2021_+_Attributs/misc/is_oconly_small.svg' => 'OC_Icons_Dez_2021_+_Attributs/misc/is_oconly.svg',
+    'OC_Icons_Dez_2021_+_Attributs/misc/40x22-oconly.svg' => 'OC_Icons_Dez_2021_+_Attributs/misc/is_oconly.svg',
+    'OC_Icons_Dez_2021_+_Attributs/log/16x16-listing-outdated.svg' => 'OC_Icons_Dez_2021_+_Attributs/cachestatus/listing-outdated.svg',
+    'OC_Icons_Dez_2021_+_Attributs/log/16x16-locked.svg' => 'OC_Icons_Dez_2021_+_Attributs/misc/16x16-locked.svg',
+    'OC_Icons_Dez_2021_+_Attributs/cachestatus/32x32-locked.svg' => 'OC_Icons_Dez_2021_+_Attributs/misc/16x16-locked.svg',
+    'OC_Icons_Dez_2021_+_Attributs/description/22x22-logs.svg' => 'OC_Icons_Dez_2021_+_Attributs/viewcache/logs.svg',
     '' => '',
 ];
 
 $noDuplicate = [
-
+    'OC_Icons_Dez_2021_+_Attributs/attributes/rund/compass.svg',
+    'OC_Icons_Dez_2021_+_Attributs/attributes/rund/tools.svg',
 ];
 
 $noUse = [
@@ -129,7 +160,13 @@ $noUse = [
     'SamEdits/event-rand3.svg',
     'SamEdits/event-rand4.svg',
     'SamEdits/event-rand5.svg',
-    'SamEdits/grins.svg'
+    'SamEdits/grins.svg',
+    'OC_Icons_Dez_2021_+_Attributs/misc/15x21-oc.svg', // Use OC_Icons_Dez_2021_+_Attributs/misc/15x15-oc.svg
+    'OC_Icons_Dez_2021_+_Attributs/viewcache/world.svg', // Use OC_Icons_Dez_2021_+_Attributs/misc/25x25-world.svg
+    'OC_Icons_Dez_2021_+_Attributs/profile/32x32-email.svg', // Use OC_Icons_Dez_2021_+_Attributs/misc/16x16-email.svg
+    'OC_Icons_Dez_2021_+_Attributs/misc/empty.svg',
+    'OC_Icons_Dez_2021_+_Attributs/log/16x16-none.svg',
+    'OC_Icons_Dez_2021_+_Attributs/misc/16x16-help.svg', // Use OC_Icons_Dez_2021_+_Attributs/misc/32x32-help.svg
 ];
 
 $cacheTypIdMap = [
@@ -162,7 +199,6 @@ $foundStatusMap = [
 
 /*
 attributes -> Cache Attribute
-cacheicons -> Cache Typen Icons
 ratings (rating, difficulty) -> D/T rating, Empfehlungssterne, ...
 head (falls wir so was noch brauchen)
 thirdparties (media, geokrety) -> Alle Logos von anderen Seiten ausser
@@ -202,7 +238,9 @@ foreach($files as $file) {
     
     $base = preg_replace('/\d\dx\d\d-/', '', basename($file));
     if (isset($nameDuplicated[$base])) {
-        #$svg['nameDuplicated'] = $nameDuplicated[$base];
+        if (!in_array($file, $noDuplicate)) {
+            $svg['nameDuplicated'] = $nameDuplicated[$base];
+        }
     } else {
         $nameDuplicated[$base] = $file;
     }
@@ -249,6 +287,16 @@ foreach($files as $file) {
         $svg['sort'] = sprintf($groupSort, $svg['group'], $svg['newName']);
     }
 
+    elseif (preg_match('#/attributes/#', $file)) {
+        $svg['group'] = 'attributes';
+        $name = explode('-', str_replace('.svg', '', basename($file)));
+        #$svg['note'] = var_export($name, true);
+        $type = $name[0];
+        $status = $name[1]??'yes';
+        $svg['newName'] = sprintf('%s-%s.svg', $type, $status);
+        $svg['sort'] = sprintf($groupSort, $svg['group'], $svg['newName']);
+    }
+
     $svgFiles[] = $svg;
 }
 
@@ -266,7 +314,7 @@ print '<tr><th>ID</th><th>Thumb</th><th>Path</th><th>Group / Directory</th><th>N
 $line  = '<tr><td>S%1$\'.03d</td><td><img src="%2$s" width="100" /></td><td>%2$s</td><td>%4$s</td><td>%5$s</td><td>%3$s</td><td></td></tr>'.PHP_EOL;
 $lineD = '<tr><td>S%1$\'.03d</td><td><img src="%2$s" width="100" /></td><td>%2$s</td><td>%4$s</td><td>%5$s</td><td>Maybe Duplicate of %3$s</td><td><img src="%3$s" width="100" /></td></tr>'.PHP_EOL;
 foreach ($svgFiles as $no => $data) {
-    if ($c_compact && in_array($data['group']??'', ['directions', 'cacheIcons border', ])){
+    if ($c_compact && in_array($data['group']??'', ['directions', 'cacheIcons', 'attributes',])){
         continue;
     }
     echo sprintf(
