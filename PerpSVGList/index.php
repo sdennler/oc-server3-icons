@@ -3,8 +3,11 @@
 error_reporting(E_ALL);
 ini_set('display_errors', 'On');
 
-$duplicatedLine = __LINE__ + 2;
+$c_compact = false;
+
+$duplicatedLine = __LINE__ + 3;
 $duplicated = [
+    // Found with fdupes -r1o name . > duplicates
     "OC_Icons_Dez_2021_+_Attributs/viewcache/16x16-maintenance.svg" => "OC_Icons_Dez_2021_+_Attributs/viewcache/16x16-maintenance_shifted.svg",
     "OC_Icons_Dez_2021_+_Attributs/viewcache/box.svg" => "OC_Icons_Dez_2021_+_Attributs/viewcache/package_green.svg",
     "OC_Icons_Dez_2021_+_Attributs/viewcache/cache-rate.svg" => "OC_Icons_Dez_2021_+_Attributs/viewcache/rating-star.svg",
@@ -60,12 +63,12 @@ $duplicated = [
     "OC_Icons_Dez_2021_+_Attributs/cacheicon/virtual-grey.svg" => "OC_Icons_Dez_2021_+_Attributs/cacheicon/virtual-n.svg",
     "OC_Icons_Dez_2021_+_Attributs/cacheicon/virtual-a-owner.svg" => "OC_Icons_Dez_2021_+_Attributs/cacheicon/virtual-n-owner.svg",
     "OC_Icons_Dez_2021_+_Attributs/cacheicon/traditional-grey.svg" => "OC_Icons_Dez_2021_+_Attributs/cacheicon/traditional-n.svg",
-    "OC_Icons_Dez_2021_+_Attributs/cacheicon/cache/16x16-traditional.svg" => "OC_Icons_Dez_2021_+_Attributs/cacheicon/map-traditional.svg",
-    "OC_Icons_Dez_2021_+_Attributs/cacheicon/16x16-9.svg" => "OC_Icons_Dez_2021_+_Attributs/cacheicon/16x16-moving.svg",
-    "OC_Icons_Dez_2021_+_Attributs/cacheicon/cache/16x16-9.svg" => "OC_Icons_Dez_2021_+_Attributs/cacheicon/16x16-moving.svg",
+    "OC_Icons_Dez_2021_+_Attributs/cacheicon/cache/16x16-traditional.svg" => "OC_Icons_Dez_2021_+_Attributs/cacheicon/traditional-s.svg",
+    "OC_Icons_Dez_2021_+_Attributs/cacheicon/16x16-9.svg" => "OC_Icons_Dez_2021_+_Attributs/cacheicon/moving.svg",
+    "OC_Icons_Dez_2021_+_Attributs/cacheicon/cache/16x16-9.svg" => "OC_Icons_Dez_2021_+_Attributs/cacheicon/moving.svg",
     "OC_Icons_Dez_2021_+_Attributs/cacheicon/moving-s.svg" => "OC_Icons_Dez_2021_+_Attributs/cacheicon/moving.svg",
-    "OC_Icons_Dez_2021_+_Attributs/cacheicon/cache/16x16-moving.svg" => "OC_Icons_Dez_2021_+_Attributs/cacheicon/16x16-moving.svg",
-    "OC_Icons_Dez_2021_+_Attributs/cacheicon/map-moving.svg" => "OC_Icons_Dez_2021_+_Attributs/cacheicon/16x16-moving.svg",
+    "OC_Icons_Dez_2021_+_Attributs/cacheicon/cache/16x16-moving.svg" => "OC_Icons_Dez_2021_+_Attributs/cacheicon/moving.svg",
+    "OC_Icons_Dez_2021_+_Attributs/cacheicon/map-moving.svg" => "OC_Icons_Dez_2021_+_Attributs/cacheicon/moving.svg",
     "OC_Icons_Dez_2021_+_Attributs/cacheicon/moving-grey.svg" => "OC_Icons_Dez_2021_+_Attributs/cacheicon/moving-n.svg",
     "OC_Icons_Dez_2021_+_Attributs/cacheicon/unknown-s.svg" => "OC_Icons_Dez_2021_+_Attributs/cacheicon/unknown.svg",
     "OC_Icons_Dez_2021_+_Attributs/cacheicon/16x16-1.svg" => "OC_Icons_Dez_2021_+_Attributs/cacheicon/unknown.svg",
@@ -86,45 +89,207 @@ $duplicated = [
     "OC_Icons_Dez_2021_+_Attributs/cacheicon/tmp.svg" => "OC_Icons_Dez_2021_+_Attributs/cacheicon/webcam.svg",
     "OC_Icons_Dez_2021_+_Attributs/cacheicon/webcam-s.svg" => "OC_Icons_Dez_2021_+_Attributs/cacheicon/webcam.svg",
     "OC_Icons_Dez_2021_+_Attributs/cacheicon/webcam-grey.svg" => "OC_Icons_Dez_2021_+_Attributs/cacheicon/webcam-n.svg",
+
+    // Manual
+    'OC_Icons_Dez_2021_+_Attributs/cacheicon/20x20-1.svg' => 'OC_Icons_Dez_2021_+_Attributs/cacheicon/unknown.svg',
+    'OC_Icons_Dez_2021_+_Attributs/cacheicon/16x16-2.svg' => 'OC_Icons_Dez_2021_+_Attributs/cacheicon/traditional-s.svg',
+    'OC_Icons_Dez_2021_+_Attributs/cacheicon/20x20-2.svg' => 'OC_Icons_Dez_2021_+_Attributs/cacheicon/traditional-s.svg',
+    'OC_Icons_Dez_2021_+_Attributs/cacheicon/20x20-3.svg' => 'OC_Icons_Dez_2021_+_Attributs/cacheicon/multi.svg',
+    'OC_Icons_Dez_2021_+_Attributs/cacheicon/16x16-3.svg' => 'OC_Icons_Dez_2021_+_Attributs/cacheicon/multi.svg',
+    'OC_Icons_Dez_2021_+_Attributs/cacheicon/20x20-4.svg' => 'OC_Icons_Dez_2021_+_Attributs/cacheicon/virtual.svg',
+    'OC_Icons_Dez_2021_+_Attributs/cacheicon/20x20-5.svg' => 'OC_Icons_Dez_2021_+_Attributs/cacheicon/webcam.svg',
+    'OC_Icons_Dez_2021_+_Attributs/cacheicon/20x20-6.svg' => 'OC_Icons_Dez_2021_+_Attributs/cacheicon/event.svg',
+    'OC_Icons_Dez_2021_+_Attributs/cacheicon/20x20-7.svg' => 'OC_Icons_Dez_2021_+_Attributs/cacheicon/mystery.svg',
+    'OC_Icons_Dez_2021_+_Attributs/cacheicon/20x20-8.svg' => 'OC_Icons_Dez_2021_+_Attributs/cacheicon/mathe.svg',
+    'OC_Icons_Dez_2021_+_Attributs/cacheicon/20x20-9.svg' => 'OC_Icons_Dez_2021_+_Attributs/cacheicon/moving.svg',
+    'OC_Icons_Dez_2021_+_Attributs/cacheicon/20x20-10.svg' => 'OC_Icons_Dez_2021_+_Attributs/cacheicon/drivein.svg',
+    'OC_Icons_Dez_2021_+_Attributs/cacheicon/22x22-event.svg' => 'OC_Icons_Dez_2021_+_Attributs/cacheicon/event.svg',
+    'OC_Icons_Dez_2021_+_Attributs/cacheicon/cache/22x22-event.svg' => 'OC_Icons_Dez_2021_+_Attributs/cacheicon/event.svg',
+    'OC_Icons_Dez_2021_+_Attributs/cacheicon/16x16-moving.svg' => 'OC_Icons_Dez_2021_+_Attributs/cacheicon/moving.svg',
+    'OC_Icons_Dez_2021_+_Attributs/cacheicon/16x16-multi.svg' => 'OC_Icons_Dez_2021_+_Attributs/cacheicon/multi.svg',
+    'OC_Icons_Dez_2021_+_Attributs/cacheicon/16x16-traditional.svg' => 'OC_Icons_Dez_2021_+_Attributs/cacheicon/traditional-s.svg',
+    'OC_Icons_Dez_2021_+_Attributs/cacheicon/22x22-traditional.svg' => 'OC_Icons_Dez_2021_+_Attributs/cacheicon/traditional-s.svg',
+    'OC_Icons_Dez_2021_+_Attributs/cacheicon/traditional.svg' => 'OC_Icons_Dez_2021_+_Attributs/cacheicon/traditional-s.svg',
+    'OC_Icons_Dez_2021_+_Attributs/cacheicon/22x20-traditional.svg' => 'OC_Icons_Dez_2021_+_Attributs/cacheicon/traditional-s.svg',
+    'OC_Icons_Dez_2021_+_Attributs/cacheicon/cache/22x22-traditional.svg' => 'OC_Icons_Dez_2021_+_Attributs/cacheicon/traditional-s.svg',
+    'OC_Icons_Dez_2021_+_Attributs/cacheicon/map-traditional.svg' => 'OC_Icons_Dez_2021_+_Attributs/cacheicon/traditional-s.svg',
+    '' => '',
+    '' => '',
 ];
+
+$noDuplicate = [
+
+];
+
+$noUse = [
+    'OC_Icons_Dez_2021_+_Attributs/misc/bg-gradient-blue.svg',
+    'OC_Icons_Dez_2021_+_Attributs/misc/bg-gradient-grey.svg',
+    'OC_Icons_Dez_2021_+_Attributs/bg-langstripe.svg',
+    'SamEdits/event-rand2.svg',
+    'SamEdits/event-rand3.svg',
+    'SamEdits/event-rand4.svg',
+    'SamEdits/event-rand5.svg',
+    'SamEdits/grins.svg'
+];
+
+$cacheTypIdMap = [
+    '10' => 'drivein',
+    '1' => 'unknown',
+    '2' => 'traditional',
+    '3' => 'multi',
+    '4' => 'virtual',
+    '5' => 'webcam',
+    '6' => 'event',
+    '7' => 'mystery',
+    '8' => 'mathe',
+    '9' => 'moving',
+];
+
+$cacheStatusMap = [
+    '' => 'active',
+    's' => 'active',
+    'a' => 'archived',
+    'n' => 'inactive',
+    'grey' => 'inactive',
+];
+
+$foundStatusMap = [
+    '' => 'untried',
+    'found' => 'found',
+    'dnf' => 'notfound',
+    'owner' => 'owned',
+];
+
+/*
+attributes -> Cache Attribute
+cacheicons -> Cache Typen Icons
+ratings (rating, difficulty) -> D/T rating, Empfehlungssterne, ...
+head (falls wir so was noch brauchen)
+thirdparties (media, geokrety) -> Alle Logos von anderen Seiten ausser
+ocnodes (nodes) -> Andere OC Platformen
+oclogos -> OC Logos
+navigation -> Icons speziell für die Navigation auf der Seite. Aktuell die zum Blättern.
+ directions -> Pfeile in alle Himmelsrichtungen
+icons (viewcache, profile, misc, map, log, description, cachestatus, action)
+
+NO USE:
+ page
+ thumb
+map/caches1
+map/caches2
+*/
 
 
 $otherFiles = [];
 $nameDuplicated = [];
 $svgFiles = [];
+$svgFilesNoUse = [];
+
+$groupSort = '000_%s_%s';
 
 $files = explode(PHP_EOL."./", trim(`find . -type f`));
 foreach($files as $file) {
+    if (isset($duplicated[$file])) {
+        continue;
+    }
+    
     if ('.svg' !== mb_substr($file, -4)) {
         $otherFiles[] = $file;
         continue;
     }
-    
+
     $svg = ['file' => $file];
     
     $base = preg_replace('/\d\dx\d\d-/', '', basename($file));
-    $svg['baseName'] = $base;
     if (isset($nameDuplicated[$base])) {
-        $svg['nameDuplicated'] = $nameDuplicated[$base];
+        #$svg['nameDuplicated'] = $nameDuplicated[$base];
     } else {
         $nameDuplicated[$base] = $file;
+    }
+
+    $svg['sort'] = $base;
+
+    if (preg_match('#/page/#', $file) || in_array($file, $noUse)) {
+        $svgFilesNoUse[] = $svg;
+        continue;
+    }
+
+    if (preg_match('#deg\.#', $file)) {
+        $svg['group'] = 'directions';
+        $svg['newName'] = str_replace('16x16-', '', basename($file));
+        $svg['sort'] = sprintf($groupSort, $svg['group'], $svg['newName']);
+    }
+
+    /** Cache icons name parts
+     *  type: see $cacheTypIdMap, various,
+     *  cache status: active, inactive, archived, ($cacheStatusMap)
+     *  found status: untried, found, notfound, owned, ($foundStatusMap)
+     *  attributes: oconly, border,
+     */
+    elseif (preg_match('#/caches1/#', $file)) {
+        $svg['group'] = 'cacheIcons';
+        $name = explode('-', str_replace(['24x24-', 'cachetype-', '.svg'], '', basename($file)));
+        #$svg['note'] = var_export($name, true);
+        $type = $cacheTypIdMap[$name[0]] ?? 'various';
+        $cacheStatus = 'inactive' === ($name[1]??null) ? 'inactive' : 'active';
+        $foundStatus = 'various' === $type ? $name[0] : 'untried';
+        $attributes = 'oconly' === ($name[1]??null) ? 'oconly-' : '';
+        $svg['newName'] = sprintf('%s-%s-%s-%sborder.svg', $type, $cacheStatus, $foundStatus, $attributes);
+        $svg['sort'] = sprintf($groupSort, $svg['group'], $svg['newName']);
+    }
+
+    elseif (preg_match('#/cacheicon/#', $file)) {
+        $svg['group'] = 'cacheIcons';
+        $name = explode('-', str_replace(['16x16-', '.svg', '_'], ['', '', '-'], basename($file)));
+        #$svg['note'] = var_export($name, true);
+        $type = $name[0];
+        $cacheStatus = $cacheStatusMap[$name[1]??''];
+        $foundStatus = $foundStatusMap[$name[2]??''];
+        $svg['newName'] = sprintf('%s-%s-%s.svg', $type, $cacheStatus, $foundStatus);
+        $svg['sort'] = sprintf($groupSort, $svg['group'], $svg['newName']);
     }
 
     $svgFiles[] = $svg;
 }
 
-usort($svgFiles, function($a, $b) {
-    return strcmp(strtoupper($a['baseName']), strtoupper($b['baseName']));
-});
+$sortBySort = function ($a, $b) {
+    return strcmp(strtoupper($a['sort']), strtoupper($b['sort']));
+};
+usort($svgFiles, $sortBySort);
+usort($svgFilesNoUse, $sortBySort);
 
-
-print '<html><body><style>table,tr,td{padding: 6px; border: 1px solid black;}</style>'.PHP_EOL;
+print '<html><body><style>body{background-color: #0f253c; color: wheat;}table,tr,td{padding: 6px; border: 1px solid black;}</style>'.PHP_EOL;
 
 print '<h2>'.count($svgFiles).' SVGs</h2>'.PHP_EOL.'<table>'.PHP_EOL;
-$line  = '<tr><td>S%1$\'.03d</td><td><img src="%2$s" width="100" /></td><td>%2$s</td><td></td><td></td></tr>'.PHP_EOL;
-$lineD = '<tr><td>S%1$\'.03d</td><td><img src="%2$s" width="100" /></td><td>%2$s</td><td>Maybe Duplicate of %3$s</td><td><img src="%3$s" width="100" /></td></tr>'.PHP_EOL;
+print '<tr><th>ID</th><th>Thumb</th><th>Path</th><th>Group / Directory</th><th>New name</th><th>Note</th><th>Other</th></tr>'.PHP_EOL;
+$line  = '<tr><td>S%1$\'.03d</td><td><img src="%2$s" width="100" /></td><td>%2$s</td><td>%4$s</td><td>%5$s</td><td>%3$s</td><td></td></tr>'.PHP_EOL;
+$lineD = '<tr><td>S%1$\'.03d</td><td><img src="%2$s" width="100" /></td><td>%2$s</td><td>%4$s</td><td>%5$s</td><td>Maybe Duplicate of %3$s</td><td><img src="%3$s" width="100" /></td></tr>'.PHP_EOL;
 foreach ($svgFiles as $no => $data) {
-    echo sprintf(isset($data['nameDuplicated']) ? $lineD : $line, $no, $data['file'], $data['nameDuplicated'] ?? null);
+    if ($c_compact && in_array($data['group']??'', ['directions', 'cacheIcons border', ])){
+        continue;
+    }
+    echo sprintf(
+        isset($data['nameDuplicated']) ? $lineD : $line,
+        $no,
+        $data['file'],
+        $data['nameDuplicated'] ?? $data['note'] ?? '',
+        $data['group'] ?? '',
+        $data['newName'] ?? '',
+    );
+}
+print '</table>'.PHP_EOL.PHP_EOL;
+
+print '<h2>'.count($svgFilesNoUse).' SVGs we should not use</h2>'.PHP_EOL.'<table>'.PHP_EOL;
+foreach ($svgFilesNoUse as $no => $data) {
+    if ($c_compact) continue;
+    echo sprintf(
+        isset($data['nameDuplicated']) ? $lineD : $line,
+        $no,
+        $data['file'],
+        $data['nameDuplicated'] ?? $svg['note'] ?? '',
+        $data['group'] ?? '',
+        $data['newName'] ?? '',
+    );
 }
 print '</table>'.PHP_EOL.PHP_EOL;
 
