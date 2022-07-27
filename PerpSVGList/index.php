@@ -258,7 +258,8 @@ $sortBySort = function ($a, $b) {
 usort($svgFiles, $sortBySort);
 usort($svgFilesNoUse, $sortBySort);
 
-print '<html><body><style>body{background-color: #0f253c; color: wheat;}table,tr,td{padding: 6px; border: 1px solid black;}</style>'.PHP_EOL;
+print '<html><head><title>OC Icons List</title><style>body{background-color: #0f253c; color: wheat;}table,tr,td{padding: 6px; border: 1px solid black;}a:link, a:active, a:focus, a:visited, a:hover {color:wheat;}</style></head><body>'.PHP_EOL;
+print '<ul><li><a href="#use">Use</a></li><li><a href="#dontuse">Don\'t Use</a></li><li><a href="#duplicated">Duplicated SVGs</a></li><li><a href="#other">non SVG files</a></li></ul>'.PHP_EOL;
 
 print '<h2>'.count($svgFiles).' SVGs</h2>'.PHP_EOL.'<table>'.PHP_EOL;
 print '<tr><th>ID</th><th>Thumb</th><th>Path</th><th>Group / Directory</th><th>New name</th><th>Note</th><th>Other</th></tr>'.PHP_EOL;
@@ -279,7 +280,7 @@ foreach ($svgFiles as $no => $data) {
 }
 print '</table>'.PHP_EOL.PHP_EOL;
 
-print '<h2>'.count($svgFilesNoUse).' SVGs we should not use</h2>'.PHP_EOL.'<table>'.PHP_EOL;
+print '<h2 id="dontuse">'.count($svgFilesNoUse).' SVGs we should not use</h2>'.PHP_EOL.'<table>'.PHP_EOL;
 foreach ($svgFilesNoUse as $no => $data) {
     if ($c_compact) continue;
     echo sprintf(
@@ -293,7 +294,7 @@ foreach ($svgFilesNoUse as $no => $data) {
 }
 print '</table>'.PHP_EOL.PHP_EOL;
 
-print '<h2>'.count($duplicated).' duplicated</h2>'.PHP_EOL.'<table>'.PHP_EOL;
+print '<h2 id="duplicated">'.count($duplicated).' duplicated</h2>'.PHP_EOL.'<table>'.PHP_EOL;
 $line = '<tr><td>D%4$\'.03d</td><td><img src="%1$s" width="100" /></td><td>%1$s</td><td>%3$sDuplicate of %2$s</td><td><img src="%2$s" width="100" /></td></tr>'.PHP_EOL;
 foreach ($duplicated as $file => $original) {
     $note = isset($duplicated[$original])? 'ALSO DUPLICATED ' : '';
@@ -302,7 +303,7 @@ foreach ($duplicated as $file => $original) {
 }
 print '</table>'.PHP_EOL.PHP_EOL;
 
-print '<h2>'.count($otherFiles).' non SVG files</h2>'.PHP_EOL.'<table>'.PHP_EOL;
+print '<h2 id="other">'.count($otherFiles).' non SVG files</h2>'.PHP_EOL.'<table>'.PHP_EOL;
 $line = '<tr><td>O%2$\'.03d</td><td>%1$s</td></tr>'.PHP_EOL;
 foreach ($otherFiles as $no => $file) {
     echo sprintf($line, $file, $no);
