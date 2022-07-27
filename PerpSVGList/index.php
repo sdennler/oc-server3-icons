@@ -144,18 +144,28 @@ $duplicated = [
     'OC_Icons_Dez_2021_+_Attributs/log/16x16-locked.svg' => 'OC_Icons_Dez_2021_+_Attributs/misc/16x16-locked.svg',
     'OC_Icons_Dez_2021_+_Attributs/cachestatus/32x32-locked.svg' => 'OC_Icons_Dez_2021_+_Attributs/misc/16x16-locked.svg',
     'OC_Icons_Dez_2021_+_Attributs/description/22x22-logs.svg' => 'OC_Icons_Dez_2021_+_Attributs/viewcache/logs.svg',
+    'OC_Icons_Dez_2021_+_Attributs/direction/direction-source.svg' => 'OC_Icons_Dez_2021_+_Attributs/direction/16x16-90deg.svg',
+    '' => '',
+    '' => '',
+    '' => '',
+    '' => '',
     '' => '',
 ];
 
 $noDuplicate = [
+    'OC_Icons_Dez_2021_+_Attributs/cacheicon/event.svg',
+    'OC_Icons_Dez_2021_+_Attributs/cacheicon/moving.svg',
+    'OC_Icons_Dez_2021_+_Attributs/cacheicon/webcam.svg',
     'OC_Icons_Dez_2021_+_Attributs/attributes/rund/compass.svg',
     'OC_Icons_Dez_2021_+_Attributs/attributes/rund/tools.svg',
+    'OC_Icons_Dez_2021_+_Attributs/viewcache/date.svg',
 ];
 
 $noUse = [
     'OC_Icons_Dez_2021_+_Attributs/misc/bg-gradient-blue.svg',
     'OC_Icons_Dez_2021_+_Attributs/misc/bg-gradient-grey.svg',
     'OC_Icons_Dez_2021_+_Attributs/bg-langstripe.svg',
+    'OC_Icons_Dez_2021_+_Attributs/darkbluetransparent.svg',
     'SamEdits/event-rand2.svg',
     'SamEdits/event-rand3.svg',
     'SamEdits/event-rand4.svg',
@@ -198,9 +208,8 @@ $foundStatusMap = [
 ];
 
 /*
-attributes -> Cache Attribute
-ratings (rating, difficulty) -> D/T rating, Empfehlungssterne, ...
 head (falls wir so was noch brauchen)
+
 thirdparties (media, geokrety) -> Alle Logos von anderen Seiten ausser
 ocnodes (nodes) -> Andere OC Platformen
 oclogos -> OC Logos
@@ -297,6 +306,18 @@ foreach($files as $file) {
         $svg['sort'] = sprintf($groupSort, $svg['group'], $svg['newName']);
     }
 
+    elseif (preg_match('#/(difficulty|rating)/#', $file)) {
+        $svg['group'] = 'ratings';
+        $svg['newName'] = str_replace(['diff', 'rat', 'terr'], ['difficulty', 'rating', 'terrain'], basename($file));
+        $svg['newName'] = preg_replace('#-(\d)\.#', '-${1}0.', $svg['newName']);
+        $svg['sort'] = sprintf($groupSort, $svg['group'], $svg['newName']);
+    }
+    elseif (preg_match('#rating-star.svg$#', $file)) {
+        $svg['group'] = 'ratings';
+        $svg['newName'] = 'rating_star.svg';
+        $svg['sort'] = sprintf($groupSort, $svg['group'], $svg['newName']);
+    }
+
     $svgFiles[] = $svg;
 }
 
@@ -314,7 +335,7 @@ print '<tr><th>ID</th><th>Thumb</th><th>Path</th><th>Group / Directory</th><th>N
 $line  = '<tr><td>S%1$\'.03d</td><td><img src="%2$s" width="100" /></td><td>%2$s</td><td>%4$s</td><td>%5$s</td><td>%3$s</td><td></td></tr>'.PHP_EOL;
 $lineD = '<tr><td>S%1$\'.03d</td><td><img src="%2$s" width="100" /></td><td>%2$s</td><td>%4$s</td><td>%5$s</td><td>Maybe Duplicate of %3$s</td><td><img src="%3$s" width="100" /></td></tr>'.PHP_EOL;
 foreach ($svgFiles as $no => $data) {
-    if ($c_compact && in_array($data['group']??'', ['directions', 'cacheIcons', 'attributes',])){
+    if ($c_compact && in_array($data['group']??'', ['directions', 'cacheIcons', 'attributes', 'ratings',])){
         continue;
     }
     echo sprintf(
