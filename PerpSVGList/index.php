@@ -148,7 +148,7 @@ $duplicated = [
     'OC_Icons_Dez_2021_+_Attributs/viewcache/watch-18.svg' => 'OC_Icons_Dez_2021_+_Attributs/misc/32x32-watched.svg',
     'OC_Icons_Dez_2021_+_Attributs/viewcache/print-18.svg' => 'OC_Icons_Dez_2021_+_Attributs/action/16x16-print.svg',
     'OC_Icons_Dez_2021_+_Attributs/profile/32x22-profile.svg' => 'OC_Icons_Dez_2021_+_Attributs/misc/32x32-profile.svg',
-    '' => '',
+    'OC_Icons_Dez_2021_+_Attributs/oc-team-comment.svg' => 'OC_Icons_Dez_2021_+_Attributs/oc_logo.svg',
     '' => '',
 ];
 
@@ -219,6 +219,11 @@ $foundStatusMap = [
 
 $manualList = [
     'OC_Icons_Dez_2021_+_Attributs/action/15x13-logout.svg' => ['group' => 'navigation', 'newName' => 'logout.svg'],
+
+    'OC_Icons_Dez_2021_+_Attributs/misc/is_oconly.svg' => ['group' => 'oclogos', 'newName' => 'oconly.svg'],
+    'OC_Icons_Dez_2021_+_Attributs/misc/15x15-oc.svg' => ['group' => 'oclogos', 'newName' => 'oc.svg'],
+    'OC_Icons_Dez_2021_+_Attributs/oc_logo.svg' => ['group' => 'oclogos', 'newName' => 'oc_logo.svg'],
+
     'OC_Icons_Dez_2021_+_Attributs/media/cc-by-nc-nd-small.svg' => ['group' => 'thirdparties', 'newName' => 'cc-by-nc-nd.svg'],
     'OC_Icons_Dez_2021_+_Attributs/misc/donate.svg' => ['group' => 'thirdparties', 'newName' => 'donate.svg'],
     'OC_Icons_Dez_2021_+_Attributs/description/22x22-geokret.svg' => ['group' => 'thirdparties', 'newName' => 'geokret.svg'],
@@ -230,6 +235,8 @@ $manualList = [
     'OC_Icons_Dez_2021_+_Attributs/media/telegram.svg' => ['group' => 'thirdparties', 'newName' => 'telegram.svg'],
     'OC_Icons_Dez_2021_+_Attributs/media/whatsapp.svg' => ['group' => 'thirdparties', 'newName' => 'whatsapp.svg'],
     'OC_Icons_Dez_2021_+_Attributs/media/16x16-facebook.svg' => ['group' => 'thirdparties', 'newName' => 'facebook.svg'],
+
+    '' => ['group' => '', 'newName' => '.svg'],
 ];
 
 $otherFiles = [];
@@ -441,7 +448,7 @@ foreach ($svgFilesNoUse as $no => $data) {
 print '</table>'.PHP_EOL.PHP_EOL;
 
 print '<h2 id="duplicated">'.count($duplicated).' duplicated</h2>'.PHP_EOL.'<table>'.PHP_EOL;
-$line = '<tr><td>D%4$\'.03d</td><td><img src="%1$s" width="100" /></td><td>%1$s</td><td>%3$sDuplicate of %2$s</td><td><img src="%2$s" width="100" /></td></tr>'.PHP_EOL;
+$line = '<tr><td>D%4$\'.03d</td><td><img src="%1$s" width="100" /></td><td><img src="%2$s" width="100" /></td><td>%1$s</td><td>%3$sDuplicate of %2$s</td></tr>'.PHP_EOL;
 foreach ($duplicated as $file => $original) {
     $note = isset($duplicated[$original])? 'ALSO DUPLICATED ' : '';
     echo sprintf($line, $file, $original, $note, $duplicatedLine);
