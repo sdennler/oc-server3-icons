@@ -163,7 +163,7 @@ $noDuplicate = [
     'OC_Icons_Dez_2021_+_Attributs/log/16x16-archived.svg',
     'OC_Icons_Dez_2021_+_Attributs/misc/32x32-checked.svg',
     'OC_Icons_Dez_2021_+_Attributs/log/16x16-dnf.svg',
-    '',
+    'OC_Icons_Dez_2021_+_Attributs/misc/wp_reference.svg',
 ];
 
 $noUse = [
@@ -357,6 +357,12 @@ foreach($files as $file) {
         $svg['sort'] = sprintf($groupSort, $svg['group'], $svg['newName']);
     }
 
+    elseif (preg_match('#/wp_#', $file)) {
+        $svg['group'] = 'wayPointIcons';
+        $svg['newName'] = str_replace('wp_', '', basename($file));
+        $svg['sort'] = sprintf($groupSort, $svg['group'], $svg['newName']);
+    }
+
     $svgFiles[] = $svg;
 }
 
@@ -385,6 +391,7 @@ usort($svgFilesNoUse, $sortBySort);
         <ul>
             <li><a href="#attributes">attributes</a> Cache Attribute</li>
             <li><a href="#cacheIcons">cacheIcons</a> Cache Typen Icons</li>
+            <li><a href="#wayPointIcons">wayPointIcons</a></li>
             <li><a href="#ratings">ratings</a> (rating, difficulty) -> D/T rating, Empfehlungssterne, ...</li>
             <li><a>head</a> (falls wir so was noch brauchen)</li>
             <li><a href="#thirdparties">thirdparties</a> (media, geokrety) -> Alle Logos von anderen Seiten ausser</li>
