@@ -334,12 +334,18 @@ foreach($files as $file) {
         $svg['sort'] = sprintf($groupSort, $svg['group'], $svg['newName']);
     }
 
-    elseif (preg_match('#/(navigation)/#', $file)) {
+    elseif (preg_match('#/navigation/#', $file)) {
         $svg['group'] = 'navigation';
         $svg['newName'] = str_replace(['16x16-', '23x23-'], '', basename($file));
         if (str_contains($svg['newName'], 'browse') && !str_contains($svg['newName'], 'inactive')) {
             $svg['newName'] = str_replace('.svg', '-active.svg', $svg['newName']);
         }
+        $svg['sort'] = sprintf($groupSort, $svg['group'], $svg['newName']);
+    }
+
+    elseif (preg_match('#[^/]+/..\.svg#', $file)) {
+        $svg['group'] = 'flags';
+        $svg['newName'] = str_replace(['16x16-', '23x23-'], '', basename($file));
         $svg['sort'] = sprintf($groupSort, $svg['group'], $svg['newName']);
     }
 
@@ -378,6 +384,7 @@ usort($svgFilesNoUse, $sortBySort);
             <li><a href="#oclogos">oclogos</a> -> OC Logos</li>
             <li><a href="#navigation">navigation</a> Icons speziell für die Navigation auf der Seite. Aktuell die zum Blättern.</li>
             <li><a href="#directions">directions</a> Pfeile in alle Himmelsrichtungen</li>
+            <li><a href="#flags">flags</a></li>
             <li><a href="#misc">misc</a> (viewcache, profile, misc, map, log, description, cachestatus, action)</li>
         </ul>
         <li><a href="#nouse">Don't Use</a></li>
@@ -392,7 +399,7 @@ $line  = '<tr%6$s><td>S%1$\'.03d</td><td><img src="%2$s" width="100" /></td><td>
 $lineD = '<tr%6$s><td>S%1$\'.03d</td><td><img src="%2$s" width="100" /></td><td>%2$s</td><td>%4$s</td><td>%5$s</td><td>Maybe Duplicate of %3$s</td><td><img src="%3$s" width="100" /></td></tr>'.PHP_EOL;
 $lastGroup = '';
 foreach ($svgFiles as $no => $data) {
-    if ($c_compact && in_array($data['group']??'', ['attributes', 'cacheIcons', 'ratings', 'thirdparties', 'directions', 'navigation',])){
+    if ($c_compact && in_array($data['group']??'', ['attributes', 'cacheIcons', 'ratings', 'thirdparties', 'directions', 'navigation', 'flags',])){
         continue;
     }
     $id = '';
