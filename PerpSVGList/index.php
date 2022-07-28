@@ -186,6 +186,7 @@ $noUse = [
     'OC_Icons_Dez_2021_+_Attributs/viewcache/ignore-18.svg' => ['alternative' => 'OC_Icons_Dez_2021_+_Attributs/viewcache/ignore-16.svg'],
     'OC_Icons_Dez_2021_+_Attributs/viewcache/list-18.svg' => ['alternative' => 'OC_Icons_Dez_2021_+_Attributs/misc/16x16-list.svg'],
     'OC_Icons_Dez_2021_+_Attributs/misc/16x16-wp_reference.svg' => ['alternative' => 'OC_Icons_Dez_2021_+_Attributs/misc/wp_reference.svg'],
+    'OC_Icons_Dez_2021_+_Attributs/navigation/15x15-smallclose.svg' => ['alternative' => 'OC_Icons_Dez_2021_+_Attributs/navigation/23x23-close.svg'],
 ];
 
 $cacheTypIdMap = [
@@ -228,12 +229,6 @@ $thirdpartiesList = [
     'OC_Icons_Dez_2021_+_Attributs/media/telegram.svg' => 'telegram.svg',
     'OC_Icons_Dez_2021_+_Attributs/media/whatsapp.svg' => 'whatsapp.svg',
     'OC_Icons_Dez_2021_+_Attributs/media/16x16-facebook.svg' => 'facebook.svg',
-    '' => '',
-    '' => '',
-    '' => '',
-    '' => '',
-    '' => '',
-    '' => '',
 ];
 
 $otherFiles = [];
@@ -339,6 +334,15 @@ foreach($files as $file) {
         $svg['sort'] = sprintf($groupSort, $svg['group'], $svg['newName']);
     }
 
+    elseif (preg_match('#/(navigation)/#', $file)) {
+        $svg['group'] = 'navigation';
+        $svg['newName'] = str_replace(['16x16-', '23x23-'], '', basename($file));
+        if (str_contains($svg['newName'], 'browse') && !str_contains($svg['newName'], 'inactive')) {
+            $svg['newName'] = str_replace('.svg', '-active.svg', $svg['newName']);
+        }
+        $svg['sort'] = sprintf($groupSort, $svg['group'], $svg['newName']);
+    }
+
     $svgFiles[] = $svg;
 }
 
@@ -388,7 +392,7 @@ $line  = '<tr%6$s><td>S%1$\'.03d</td><td><img src="%2$s" width="100" /></td><td>
 $lineD = '<tr%6$s><td>S%1$\'.03d</td><td><img src="%2$s" width="100" /></td><td>%2$s</td><td>%4$s</td><td>%5$s</td><td>Maybe Duplicate of %3$s</td><td><img src="%3$s" width="100" /></td></tr>'.PHP_EOL;
 $lastGroup = '';
 foreach ($svgFiles as $no => $data) {
-    if ($c_compact && in_array($data['group']??'', ['attributes', 'cacheIcons', 'ratings', 'thirdparties', 'directions',])){
+    if ($c_compact && in_array($data['group']??'', ['attributes', 'cacheIcons', 'ratings', 'thirdparties', 'directions', 'navigation',])){
         continue;
     }
     $id = '';
