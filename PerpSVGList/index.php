@@ -164,6 +164,14 @@ $noDuplicate = [
     'OC_Icons_Dez_2021_+_Attributs/misc/32x32-checked.svg',
     'OC_Icons_Dez_2021_+_Attributs/log/16x16-dnf.svg',
     'OC_Icons_Dez_2021_+_Attributs/misc/wp_reference.svg',
+    'OC_Icons_Dez_2021_+_Attributs/misc/32x32-ignore.svg',
+    'OC_Icons_Dez_2021_+_Attributs/action/16x16-ignore.svg',
+    'OC_Icons_Dez_2021_+_Attributs/misc/16x16-list.svg',
+    'OC_Icons_Dez_2021_+_Attributs/log/16x16-note.svg',
+    'OC_Icons_Dez_2021_+_Attributs/viewcache/16x16-search.svg',
+    'OC_Icons_Dez_2021_+_Attributs/viewcache/time.svg',
+    'OC_Icons_Dez_2021_+_Attributs/viewcache/16x16-found.svg',
+    'OC_Icons_Dez_2021_+_Attributs/log/16x16-found.svg',
 ];
 
 $noUse = [
@@ -359,6 +367,7 @@ foreach($files as $file) {
 
     elseif (preg_match('#/wp_#', $file)) {
         $svg['group'] = 'wayPointIcons';
+        $svg['note'] = 'Image needs trimming';
         $svg['newName'] = str_replace('wp_', '', basename($file));
         $svg['sort'] = sprintf($groupSort, $svg['group'], $svg['newName']);
     }
