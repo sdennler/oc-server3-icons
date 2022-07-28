@@ -145,9 +145,9 @@ $duplicated = [
     'OC_Icons_Dez_2021_+_Attributs/cachestatus/32x32-locked.svg' => 'OC_Icons_Dez_2021_+_Attributs/misc/16x16-locked.svg',
     'OC_Icons_Dez_2021_+_Attributs/description/22x22-logs.svg' => 'OC_Icons_Dez_2021_+_Attributs/viewcache/logs.svg',
     'OC_Icons_Dez_2021_+_Attributs/direction/direction-source.svg' => 'OC_Icons_Dez_2021_+_Attributs/direction/16x16-90deg.svg',
-    '' => '',
-    '' => '',
-    '' => '',
+    'OC_Icons_Dez_2021_+_Attributs/viewcache/watch-18.svg' => 'OC_Icons_Dez_2021_+_Attributs/misc/32x32-watched.svg',
+    'OC_Icons_Dez_2021_+_Attributs/viewcache/print-18.svg' => 'OC_Icons_Dez_2021_+_Attributs/action/16x16-print.svg',
+    'OC_Icons_Dez_2021_+_Attributs/profile/32x22-profile.svg' => 'OC_Icons_Dez_2021_+_Attributs/misc/32x32-profile.svg',
     '' => '',
     '' => '',
 ];
@@ -159,6 +159,11 @@ $noDuplicate = [
     'OC_Icons_Dez_2021_+_Attributs/attributes/rund/compass.svg',
     'OC_Icons_Dez_2021_+_Attributs/attributes/rund/tools.svg',
     'OC_Icons_Dez_2021_+_Attributs/viewcache/date.svg',
+    'OC_Icons_Dez_2021_+_Attributs/profile/32x32-adopt.svg',
+    'OC_Icons_Dez_2021_+_Attributs/log/16x16-archived.svg',
+    'OC_Icons_Dez_2021_+_Attributs/misc/32x32-checked.svg',
+    'OC_Icons_Dez_2021_+_Attributs/log/16x16-dnf.svg',
+    '',
 ];
 
 $noUse = [
@@ -177,6 +182,10 @@ $noUse = [
     'OC_Icons_Dez_2021_+_Attributs/misc/empty.svg',
     'OC_Icons_Dez_2021_+_Attributs/log/16x16-none.svg',
     'OC_Icons_Dez_2021_+_Attributs/misc/16x16-help.svg', // Use OC_Icons_Dez_2021_+_Attributs/misc/32x32-help.svg
+    'OC_Icons_Dez_2021_+_Attributs/misc/32x32-watched.svg', // OC_Icons_Dez_2021_+_Attributs/viewcache/16x16-watch.svg
+    'OC_Icons_Dez_2021_+_Attributs/viewcache/ignore-18.svg', // OC_Icons_Dez_2021_+_Attributs/viewcache/ignore-16.svg
+    'OC_Icons_Dez_2021_+_Attributs/viewcache/list-18.svg', // OC_Icons_Dez_2021_+_Attributs/misc/16x16-list.svg
+    'OC_Icons_Dez_2021_+_Attributs/misc/16x16-wp_reference.svg', // OC_Icons_Dez_2021_+_Attributs/misc/wp_reference.svg
 ];
 
 $cacheTypIdMap = [
@@ -207,23 +216,25 @@ $foundStatusMap = [
     'owner' => 'owned',
 ];
 
-/*
-head (falls wir so was noch brauchen)
-
-thirdparties (media, geokrety) -> Alle Logos von anderen Seiten ausser
-ocnodes (nodes) -> Andere OC Platformen
-oclogos -> OC Logos
-navigation -> Icons speziell für die Navigation auf der Seite. Aktuell die zum Blättern.
- directions -> Pfeile in alle Himmelsrichtungen
-icons (viewcache, profile, misc, map, log, description, cachestatus, action)
-
-NO USE:
- page
- thumb
-map/caches1
-map/caches2
-*/
-
+$thirdpartiesList = [
+    'OC_Icons_Dez_2021_+_Attributs/media/cc-by-nc-nd-small.svg' => 'cc-by-nc-nd.svg',
+    'OC_Icons_Dez_2021_+_Attributs/misc/donate.svg' => 'donate.svg',
+    'OC_Icons_Dez_2021_+_Attributs/description/22x22-geokret.svg' => 'geokret.svg',
+    'OC_Icons_Dez_2021_+_Attributs/viewcache/gk.svg' => 'geokret_button.svg',
+    'OC_Icons_Dez_2021_+_Attributs/media/16x16-github.svg' => 'github.svg',
+    'OC_Icons_Dez_2021_+_Attributs/description/32x32-rss.svg' => 'rss.svg',
+    'OC_Icons_Dez_2021_+_Attributs/media/32x32-Instagram.svg' => 'instagram.svg',
+    'OC_Icons_Dez_2021_+_Attributs/media/32x32-slack.svg' => 'slack.svg',
+    'OC_Icons_Dez_2021_+_Attributs/media/telegram.svg' => 'telegram.svg',
+    'OC_Icons_Dez_2021_+_Attributs/media/whatsapp.svg' => 'whatsapp.svg',
+    '	OC_Icons_Dez_2021_+_Attributs/media/16x16-facebook.svg' => 'facebook.svg',
+    '' => '',
+    '' => '',
+    '' => '',
+    '' => '',
+    '' => '',
+    '' => '',
+];
 
 $otherFiles = [];
 $nameDuplicated = [];
@@ -318,6 +329,12 @@ foreach($files as $file) {
         $svg['sort'] = sprintf($groupSort, $svg['group'], $svg['newName']);
     }
 
+    elseif (isset($thirdpartiesList[$file])) {
+        $svg['group'] = 'thirdparties';
+        $svg['newName'] = $thirdpartiesList[$file];
+        $svg['sort'] = sprintf($groupSort, $svg['group'], $svg['newName']);
+    }
+
     $svgFiles[] = $svg;
 }
 
@@ -327,16 +344,48 @@ $sortBySort = function ($a, $b) {
 usort($svgFiles, $sortBySort);
 usort($svgFilesNoUse, $sortBySort);
 
-print '<html><head><title>OC Icons List</title><style>body{background-color: #0f253c; color: wheat;}table,tr,td{padding: 6px; border: 1px solid black;}a:link, a:active, a:focus, a:visited, a:hover {color:wheat;}</style></head><body>'.PHP_EOL;
-print '<ul><li><a href="#use">Use</a></li><li><a href="#dontuse">Don\'t Use</a></li><li><a href="#duplicated">Duplicated SVGs</a></li><li><a href="#other">non SVG files</a></li></ul>'.PHP_EOL;
+
+?>
+<html>
+<head>
+    <title>OC Icons List</title>
+    <style>body{background-color: #0f253c; color: wheat;}table,tr,td{padding: 6px; border: 1px solid black;}a:link, a:active, a:focus, a:visited, a:hover {color:wheat;}</style>
+</head>
+<body>
+    <h1>OC Logos</h1>
+    <ul>
+        <li><a href="#use">Icons to use</a></li>
+        <ul>
+            <li><a href="#attributes">attributes</a> Cache Attribute</li>
+            <li><a href="#cacheIcons">cacheIcons</a> Cache Typen Icons</li>
+            <li><a href="#ratings">ratings</a> (rating, difficulty) -> D/T rating, Empfehlungssterne, ...</li>
+            <li><a>head</a> (falls wir so was noch brauchen)</li>
+            <li><a href="#thirdparties">thirdparties</a> (media, geokrety) -> Alle Logos von anderen Seiten ausser</li>
+            <li><a>ocnodes</a> (nodes) -> Andere OC Platformen</li>
+            <li><a href="#oclogos">oclogos</a> -> OC Logos</li>
+            <li><a href="#navigation">navigation</a> Icons speziell für die Navigation auf der Seite. Aktuell die zum Blättern.</li>
+            <li><a href="#directions">directions</a> Pfeile in alle Himmelsrichtungen</li>
+            <li><a href="#misc">misc</a> (viewcache, profile, misc, map, log, description, cachestatus, action)</li>
+        </ul>
+        <li><a href="#dontuse">Don\'t Use</a></li>
+        <li><a href="#duplicated">Duplicated SVGs</a></li>
+        <li><a href="#other">non SVG files</a></li>
+    </ul>
+<?php
 
 print '<h2>'.count($svgFiles).' SVGs</h2>'.PHP_EOL.'<table>'.PHP_EOL;
-print '<tr><th>ID</th><th>Thumb</th><th>Path</th><th>Group / Directory</th><th>New name</th><th>Note</th><th>Other</th></tr>'.PHP_EOL;
-$line  = '<tr><td>S%1$\'.03d</td><td><img src="%2$s" width="100" /></td><td>%2$s</td><td>%4$s</td><td>%5$s</td><td>%3$s</td><td></td></tr>'.PHP_EOL;
-$lineD = '<tr><td>S%1$\'.03d</td><td><img src="%2$s" width="100" /></td><td>%2$s</td><td>%4$s</td><td>%5$s</td><td>Maybe Duplicate of %3$s</td><td><img src="%3$s" width="100" /></td></tr>'.PHP_EOL;
+print '<tr><th>ID</th><th>Thumb</th><th>Current Path</th><th>Group / Directory</th><th>New name</th><th>Note</th><th>Other</th></tr>'.PHP_EOL;
+$line  = '<tr%6$s><td>S%1$\'.03d</td><td><img src="%2$s" width="100" /></td><td>%2$s</td><td>%4$s</td><td>%5$s</td><td>%3$s</td><td></td></tr>'.PHP_EOL;
+$lineD = '<tr%6$s><td>S%1$\'.03d</td><td><img src="%2$s" width="100" /></td><td>%2$s</td><td>%4$s</td><td>%5$s</td><td>Maybe Duplicate of %3$s</td><td><img src="%3$s" width="100" /></td></tr>'.PHP_EOL;
+$lastGroup = '';
 foreach ($svgFiles as $no => $data) {
-    if ($c_compact && in_array($data['group']??'', ['directions', 'cacheIcons', 'attributes', 'ratings',])){
+    if ($c_compact && in_array($data['group']??'', ['attributes', 'cacheIcons', 'ratings', 'thirdparties', 'directions',])){
         continue;
+    }
+    $id = '';
+    if (isset($data['group']) && $lastGroup !== $data['group']) {
+        $id = sprintf(' id="%s"', $data['group']);
+        $lastGroup = $data['group'] ?? '';
     }
     echo sprintf(
         isset($data['nameDuplicated']) ? $lineD : $line,
@@ -345,6 +394,7 @@ foreach ($svgFiles as $no => $data) {
         $data['nameDuplicated'] ?? $data['note'] ?? '',
         $data['group'] ?? '',
         $data['newName'] ?? '',
+        $id,
     );
 }
 print '</table>'.PHP_EOL.PHP_EOL;
@@ -359,6 +409,7 @@ foreach ($svgFilesNoUse as $no => $data) {
         $data['nameDuplicated'] ?? $svg['note'] ?? '',
         $data['group'] ?? '',
         $data['newName'] ?? '',
+        '',
     );
 }
 print '</table>'.PHP_EOL.PHP_EOL;
