@@ -217,18 +217,19 @@ $foundStatusMap = [
     'owner' => 'owned',
 ];
 
-$thirdpartiesList = [
-    'OC_Icons_Dez_2021_+_Attributs/media/cc-by-nc-nd-small.svg' => 'cc-by-nc-nd.svg',
-    'OC_Icons_Dez_2021_+_Attributs/misc/donate.svg' => 'donate.svg',
-    'OC_Icons_Dez_2021_+_Attributs/description/22x22-geokret.svg' => 'geokret.svg',
-    'OC_Icons_Dez_2021_+_Attributs/viewcache/gk.svg' => 'geokret_button.svg',
-    'OC_Icons_Dez_2021_+_Attributs/media/16x16-github.svg' => 'github.svg',
-    'OC_Icons_Dez_2021_+_Attributs/description/32x32-rss.svg' => 'rss.svg',
-    'OC_Icons_Dez_2021_+_Attributs/media/32x32-Instagram.svg' => 'instagram.svg',
-    'OC_Icons_Dez_2021_+_Attributs/media/32x32-slack.svg' => 'slack.svg',
-    'OC_Icons_Dez_2021_+_Attributs/media/telegram.svg' => 'telegram.svg',
-    'OC_Icons_Dez_2021_+_Attributs/media/whatsapp.svg' => 'whatsapp.svg',
-    'OC_Icons_Dez_2021_+_Attributs/media/16x16-facebook.svg' => 'facebook.svg',
+$manualList = [
+    'OC_Icons_Dez_2021_+_Attributs/action/15x13-logout.svg' => ['group' => 'navigation', 'newName' => 'logout.svg'],
+    'OC_Icons_Dez_2021_+_Attributs/media/cc-by-nc-nd-small.svg' => ['group' => 'thirdparties', 'newName' => 'cc-by-nc-nd.svg'],
+    'OC_Icons_Dez_2021_+_Attributs/misc/donate.svg' => ['group' => 'thirdparties', 'newName' => 'donate.svg'],
+    'OC_Icons_Dez_2021_+_Attributs/description/22x22-geokret.svg' => ['group' => 'thirdparties', 'newName' => 'geokret.svg'],
+    'OC_Icons_Dez_2021_+_Attributs/viewcache/gk.svg' => ['group' => 'thirdparties', 'newName' => 'geokret_button.svg'],
+    'OC_Icons_Dez_2021_+_Attributs/media/16x16-github.svg' => ['group' => 'thirdparties', 'newName' => 'github.svg'],
+    'OC_Icons_Dez_2021_+_Attributs/description/32x32-rss.svg' => ['group' => 'thirdparties', 'newName' => 'rss.svg'],
+    'OC_Icons_Dez_2021_+_Attributs/media/32x32-Instagram.svg' => ['group' => 'thirdparties', 'newName' => 'instagram.svg'],
+    'OC_Icons_Dez_2021_+_Attributs/media/32x32-slack.svg' => ['group' => 'thirdparties', 'newName' => 'slack.svg'],
+    'OC_Icons_Dez_2021_+_Attributs/media/telegram.svg' => ['group' => 'thirdparties', 'newName' => 'telegram.svg'],
+    'OC_Icons_Dez_2021_+_Attributs/media/whatsapp.svg' => ['group' => 'thirdparties', 'newName' => 'whatsapp.svg'],
+    'OC_Icons_Dez_2021_+_Attributs/media/16x16-facebook.svg' => ['group' => 'thirdparties', 'newName' => 'facebook.svg'],
 ];
 
 $otherFiles = [];
@@ -271,7 +272,13 @@ foreach($files as $file) {
         continue;
     }
 
-    if (preg_match('#deg\.#', $file)) {
+    if (isset($manualList[$file])) {
+        $svg['group'] = $manualList[$file]['group'];
+        $svg['newName'] = $manualList[$file]['newName'];
+        $svg['sort'] = sprintf($groupSort, $svg['group'], $svg['newName']);
+    }
+
+    elseif (preg_match('#deg\.#', $file)) {
         $svg['group'] = 'directions';
         $svg['newName'] = str_replace('16x16-', '', basename($file));
         $svg['sort'] = sprintf($groupSort, $svg['group'], $svg['newName']);
@@ -325,12 +332,6 @@ foreach($files as $file) {
     elseif (preg_match('#rating-star.svg$#', $file)) {
         $svg['group'] = 'ratings';
         $svg['newName'] = 'rating_star.svg';
-        $svg['sort'] = sprintf($groupSort, $svg['group'], $svg['newName']);
-    }
-
-    elseif (isset($thirdpartiesList[$file])) {
-        $svg['group'] = 'thirdparties';
-        $svg['newName'] = $thirdpartiesList[$file];
         $svg['sort'] = sprintf($groupSort, $svg['group'], $svg['newName']);
     }
 
