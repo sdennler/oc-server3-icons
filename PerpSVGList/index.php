@@ -167,25 +167,25 @@ $noDuplicate = [
 ];
 
 $noUse = [
-    'OC_Icons_Dez_2021_+_Attributs/misc/bg-gradient-blue.svg',
-    'OC_Icons_Dez_2021_+_Attributs/misc/bg-gradient-grey.svg',
-    'OC_Icons_Dez_2021_+_Attributs/bg-langstripe.svg',
-    'OC_Icons_Dez_2021_+_Attributs/darkbluetransparent.svg',
-    'SamEdits/event-rand2.svg',
-    'SamEdits/event-rand3.svg',
-    'SamEdits/event-rand4.svg',
-    'SamEdits/event-rand5.svg',
-    'SamEdits/grins.svg',
-    'OC_Icons_Dez_2021_+_Attributs/misc/15x21-oc.svg', // Use OC_Icons_Dez_2021_+_Attributs/misc/15x15-oc.svg
-    'OC_Icons_Dez_2021_+_Attributs/viewcache/world.svg', // Use OC_Icons_Dez_2021_+_Attributs/misc/25x25-world.svg
-    'OC_Icons_Dez_2021_+_Attributs/profile/32x32-email.svg', // Use OC_Icons_Dez_2021_+_Attributs/misc/16x16-email.svg
-    'OC_Icons_Dez_2021_+_Attributs/misc/empty.svg',
-    'OC_Icons_Dez_2021_+_Attributs/log/16x16-none.svg',
-    'OC_Icons_Dez_2021_+_Attributs/misc/16x16-help.svg', // Use OC_Icons_Dez_2021_+_Attributs/misc/32x32-help.svg
-    'OC_Icons_Dez_2021_+_Attributs/misc/32x32-watched.svg', // OC_Icons_Dez_2021_+_Attributs/viewcache/16x16-watch.svg
-    'OC_Icons_Dez_2021_+_Attributs/viewcache/ignore-18.svg', // OC_Icons_Dez_2021_+_Attributs/viewcache/ignore-16.svg
-    'OC_Icons_Dez_2021_+_Attributs/viewcache/list-18.svg', // OC_Icons_Dez_2021_+_Attributs/misc/16x16-list.svg
-    'OC_Icons_Dez_2021_+_Attributs/misc/16x16-wp_reference.svg', // OC_Icons_Dez_2021_+_Attributs/misc/wp_reference.svg
+    'OC_Icons_Dez_2021_+_Attributs/misc/bg-gradient-blue.svg' => ['reason' => 'css'],
+    'OC_Icons_Dez_2021_+_Attributs/misc/bg-gradient-grey.svg' => ['reason' => 'css'],
+    'OC_Icons_Dez_2021_+_Attributs/bg-langstripe.svg' => ['reason' => 'css'],
+    'OC_Icons_Dez_2021_+_Attributs/darkbluetransparent.svg' => ['reason' => 'css'],
+    'OC_Icons_Dez_2021_+_Attributs/misc/empty.svg' => ['reason' => 'css'],
+    'OC_Icons_Dez_2021_+_Attributs/log/16x16-none.svg' => ['reason' => 'css'],
+    'SamEdits/event-rand2.svg' => [],
+    'SamEdits/event-rand3.svg' => [],
+    'SamEdits/event-rand4.svg' => [],
+    'SamEdits/event-rand5.svg' => [],
+    'SamEdits/grins.svg' => [],
+    'OC_Icons_Dez_2021_+_Attributs/misc/15x21-oc.svg' => ['alternative' => 'OC_Icons_Dez_2021_+_Attributs/misc/15x15-oc.svg'],
+    'OC_Icons_Dez_2021_+_Attributs/viewcache/world.svg' => ['alternative' => 'OC_Icons_Dez_2021_+_Attributs/misc/25x25-world.svg'],
+    'OC_Icons_Dez_2021_+_Attributs/profile/32x32-email.svg' => ['alternative' => 'OC_Icons_Dez_2021_+_Attributs/misc/16x16-email.svg'],
+    'OC_Icons_Dez_2021_+_Attributs/misc/16x16-help.svg' => ['alternative' => 'OC_Icons_Dez_2021_+_Attributs/misc/32x32-help.svg'],
+    'OC_Icons_Dez_2021_+_Attributs/misc/32x32-watched.svg' => ['alternative' => 'OC_Icons_Dez_2021_+_Attributs/viewcache/16x16-watch.svg'],
+    'OC_Icons_Dez_2021_+_Attributs/viewcache/ignore-18.svg' => ['alternative' => 'OC_Icons_Dez_2021_+_Attributs/viewcache/ignore-16.svg'],
+    'OC_Icons_Dez_2021_+_Attributs/viewcache/list-18.svg' => ['alternative' => 'OC_Icons_Dez_2021_+_Attributs/misc/16x16-list.svg'],
+    'OC_Icons_Dez_2021_+_Attributs/misc/16x16-wp_reference.svg' => ['alternative' => 'OC_Icons_Dez_2021_+_Attributs/misc/wp_reference.svg'],
 ];
 
 $cacheTypIdMap = [
@@ -227,7 +227,7 @@ $thirdpartiesList = [
     'OC_Icons_Dez_2021_+_Attributs/media/32x32-slack.svg' => 'slack.svg',
     'OC_Icons_Dez_2021_+_Attributs/media/telegram.svg' => 'telegram.svg',
     'OC_Icons_Dez_2021_+_Attributs/media/whatsapp.svg' => 'whatsapp.svg',
-    '	OC_Icons_Dez_2021_+_Attributs/media/16x16-facebook.svg' => 'facebook.svg',
+    'OC_Icons_Dez_2021_+_Attributs/media/16x16-facebook.svg' => 'facebook.svg',
     '' => '',
     '' => '',
     '' => '',
@@ -267,8 +267,12 @@ foreach($files as $file) {
 
     $svg['sort'] = $base;
 
-    if (preg_match('#/page/#', $file) || in_array($file, $noUse)) {
+    if (preg_match('#/page/#', $file)) {
         $svgFilesNoUse[] = $svg;
+        continue;
+    }
+    elseif (isset($noUse[$file])) {
+        $svgFilesNoUse[] = array_merge($svg, $noUse[$file]);
         continue;
     }
 
@@ -349,10 +353,15 @@ usort($svgFilesNoUse, $sortBySort);
 <html>
 <head>
     <title>OC Icons List</title>
-    <style>body{background-color: #0f253c; color: wheat;}table,tr,td{padding: 6px; border: 1px solid black;}a:link, a:active, a:focus, a:visited, a:hover {color:wheat;}</style>
+    <style>
+        body{background-color: #0f253c; color: wheat;}
+        table,tr,td{padding: 6px; border: 1px solid black;}
+        a:link, a:active, a:focus, a:visited, a:hover {color:wheat;}
+        img{max-height: 300px;}
+    </style>
 </head>
 <body>
-    <h1>OC Logos</h1>
+    <h1>OC Icons List</h1>
     <ul>
         <li><a href="#use">Icons to use</a></li>
         <ul>
@@ -367,7 +376,7 @@ usort($svgFilesNoUse, $sortBySort);
             <li><a href="#directions">directions</a> Pfeile in alle Himmelsrichtungen</li>
             <li><a href="#misc">misc</a> (viewcache, profile, misc, map, log, description, cachestatus, action)</li>
         </ul>
-        <li><a href="#dontuse">Don\'t Use</a></li>
+        <li><a href="#nouse">Don't Use</a></li>
         <li><a href="#duplicated">Duplicated SVGs</a></li>
         <li><a href="#other">non SVG files</a></li>
     </ul>
@@ -399,17 +408,22 @@ foreach ($svgFiles as $no => $data) {
 }
 print '</table>'.PHP_EOL.PHP_EOL;
 
-print '<h2 id="dontuse">'.count($svgFilesNoUse).' SVGs we should not use</h2>'.PHP_EOL.'<table>'.PHP_EOL;
+print '<h2 id="nouse">' .count($svgFilesNoUse).' SVGs we should not use</h2>'.PHP_EOL.'<table>'.PHP_EOL;
+print '<tr><th>ID</th><th>Thumb</th><th>Current Path</th><th>Note</th></tr>'.PHP_EOL;
 foreach ($svgFilesNoUse as $no => $data) {
     if ($c_compact) continue;
+    $note = '';
+    if ('css' === ($data['reason']??'')) {
+        $note .= ' Use CSS instead.';
+    }
+    if (isset($data['alternative'])) {
+        $note .= sprintf(' Use %1$s <img src="%1$s" width="100" />', $data['alternative']);
+    }
     echo sprintf(
-        isset($data['nameDuplicated']) ? $lineD : $line,
+        '<tr><td>N%1$\'.03d</td><td><img src="%2$s" width="100" /></td><td>%2$s</td><td>%3$s</td></tr>'.PHP_EOL,
         $no,
         $data['file'],
-        $data['nameDuplicated'] ?? $svg['note'] ?? '',
-        $data['group'] ?? '',
-        $data['newName'] ?? '',
-        '',
+        $note,
     );
 }
 print '</table>'.PHP_EOL.PHP_EOL;
@@ -424,9 +438,9 @@ foreach ($duplicated as $file => $original) {
 print '</table>'.PHP_EOL.PHP_EOL;
 
 print '<h2 id="other">'.count($otherFiles).' non SVG files</h2>'.PHP_EOL.'<table>'.PHP_EOL;
-$line = '<tr><td>O%2$\'.03d</td><td>%1$s</td></tr>'.PHP_EOL;
+$line = '<tr><td>O%1$\'.03d</td><td><img src="%2$s" width="100" /></td><td>%2$s</td></tr>'.PHP_EOL;
 foreach ($otherFiles as $no => $file) {
-    echo sprintf($line, $file, $no);
+    echo sprintf($line, $no, $file);
 }
 print '</table>'.PHP_EOL.PHP_EOL;
 
