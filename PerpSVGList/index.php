@@ -229,6 +229,7 @@ $foundStatusMap = [
 ];
 
 $manualList = [
+    'OC_Icons_Dez_2021_+_Attributs/cs.svg' => ['group' => 'flags', 'newName' => 'cz.svg'],
     'OC_Icons_Dez_2021_+_Attributs/oc_404.svg' => ['group' => 'navigation', 'newName' => 'error404.svg', 'note' => 'Image needs trimming'],
     'OC_Icons_Dez_2021_+_Attributs/action/15x13-logout.svg' => ['group' => 'navigation', 'newName' => 'button-logout.svg'],
     'OC_Icons_Dez_2021_+_Attributs/navigation/23x23-close.svg' => ['group' => 'navigation', 'newName' => 'button-close.vg'],
@@ -336,7 +337,7 @@ $manualList = [
     'OC_Icons_Dez_2021_+_Attributs/profile/32x32-statistic2.svg' =>            ['group' => 'misc', 'newName' => 'statistic2.svg'],
     'OC_Icons_Dez_2021_+_Attributs/viewcache/14x19-gps-device.svg' =>          ['group' => 'misc', 'newName' => 'gps_device.svg'],
     'OC_Icons_Dez_2021_+_Attributs/viewcache/16x16-dnf.svg' =>                 ['group' => 'misc', 'newName' => 'dnf.svg'],
-    'OC_Icons_Dez_2021_+_Attributs/viewcache/16x16-found.svg' =>               ['group' => 'misc', 'newName' => 'found.svg'],
+    'OC_Icons_Dez_2021_+_Attributs/viewcache/16x16-found.svg' =>               ['group' => 'misc', 'newName' => 'checked.svg'],
     'OC_Icons_Dez_2021_+_Attributs/viewcache/16x16-info.svg' =>                ['group' => 'misc', 'newName' => 'info.svg'],
     'OC_Icons_Dez_2021_+_Attributs/viewcache/16x16-maintenance_shifted.svg' => ['group' => 'misc', 'newName' => 'maintenance_shifted.svg'],
     'OC_Icons_Dez_2021_+_Attributs/viewcache/16x16-note.svg' =>                ['group' => 'misc', 'newName' => 'note.svg'],
