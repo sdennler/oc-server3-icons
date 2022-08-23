@@ -149,7 +149,8 @@ $duplicated = [
     'OC_Icons_Dez_2021_+_Attributs/viewcache/print-18.svg' => 'OC_Icons_Dez_2021_+_Attributs/action/16x16-print.svg',
     'OC_Icons_Dez_2021_+_Attributs/profile/32x22-profile.svg' => 'OC_Icons_Dez_2021_+_Attributs/misc/32x32-profile.svg',
     'OC_Icons_Dez_2021_+_Attributs/oc-team-comment.svg' => 'OC_Icons_Dez_2021_+_Attributs/oc_logo.svg',
-    '' => '',
+    'SamEdits/20x20-cache-note.svg' => 'OC_Icons_Dez_2021_+_Attributs/viewcache/16x16-note.svg',
+    'OC_Icons_Dez_2021_+_Attributs/cachestatus/16x16-trash.svg' => 'OC_Icons_Dez_2021_+_Attributs/action/16x16-delete.svg',
 ];
 
 $noDuplicate = [
@@ -231,20 +232,21 @@ $foundStatusMap = [
 ];
 
 $manualList = [
-    'OC_Icons_Dez_2021_+_Attributs/map/caches1/24x24-found.svg' => ['group' => 'cacheTypes', 'newName' => 'various-active-found-border.svg', 'note' => 'Wrong image exported. Should be with out OC only border.'],
-    'OC_Icons_Dez_2021_+_Attributs/cs.svg' => ['group' => 'flags', 'newName' => 'cz.svg'],
+    'OC_Icons_Dez_2021_+_Attributs/map/caches1/24x24-found.svg' => ['group' => 'cacheTypes', 'newName' => 'various-active-found-border.svg', 'note' => 'Wrong image. Should be with white border.'],
+    'OC_Icons_Dez_2021_+_Attributs/cs.svg' => ['group' => 'flags', 'newName' => 'cz.svg', 'note' => 'Image has unclear edge'],
+    'OC_Icons_Dez_2021_+_Attributs/fr.svg' => ['group' => 'flags', 'newName' => 'fr.svg', 'note' => 'Image has unclear edge'],
     'OC_Icons_Dez_2021_+_Attributs/oc_404.svg' => ['group' => 'navigation', 'newName' => 'error404.svg', 'note' => 'Image needs trimming'],
     'OC_Icons_Dez_2021_+_Attributs/action/15x13-logout.svg' => ['group' => 'navigation', 'newName' => 'button-logout.svg'],
     'OC_Icons_Dez_2021_+_Attributs/navigation/23x23-close.svg' => ['group' => 'navigation', 'newName' => 'button-close.vg'],
 
     'OC_Icons_Dez_2021_+_Attributs/misc/is_oconly.svg' => ['group' => 'oclogos', 'newName' => 'oconly.svg'],
-    'OC_Icons_Dez_2021_+_Attributs/misc/15x15-oc.svg' =>  ['group' => 'oclogos', 'newName' => 'oc.svg'],
+    'OC_Icons_Dez_2021_+_Attributs/misc/15x15-oc.svg' =>  ['group' => 'misc', 'newName' => 'circle-oc.svg'],
     'OC_Icons_Dez_2021_+_Attributs/oc_logo.svg' =>        ['group' => 'oclogos', 'newName' => 'oc_logo.svg'],
 
     'OC_Icons_Dez_2021_+_Attributs/media/cc-by-nc-nd-small.svg' =>   ['group' => 'thirdparties', 'newName' => 'cc-by_nc_nd.svg'],
     'OC_Icons_Dez_2021_+_Attributs/misc/donate.svg' =>               ['group' => 'thirdparties', 'newName' => 'donate.svg'],
-    'OC_Icons_Dez_2021_+_Attributs/description/22x22-geokret.svg' => ['group' => 'thirdparties', 'newName' => 'geokret.svg'],
-    'OC_Icons_Dez_2021_+_Attributs/viewcache/gk.svg' =>              ['group' => 'thirdparties', 'newName' => 'geokret-button.svg'],
+    'OC_Icons_Dez_2021_+_Attributs/description/22x22-geokret.svg' => ['group' => 'thirdparties', 'newName' => 'geokrety.svg'],
+    'OC_Icons_Dez_2021_+_Attributs/viewcache/gk.svg' =>              ['group' => 'thirdparties', 'newName' => 'circle-geokrety.svg'],
     'OC_Icons_Dez_2021_+_Attributs/media/16x16-github.svg' =>        ['group' => 'thirdparties', 'newName' => 'github.svg'],
     'OC_Icons_Dez_2021_+_Attributs/description/32x32-rss.svg' =>     ['group' => 'thirdparties', 'newName' => 'rss.svg'],
     'OC_Icons_Dez_2021_+_Attributs/media/32x32-Instagram.svg' =>     ['group' => 'thirdparties', 'newName' => 'instagram.svg'],
@@ -273,19 +275,18 @@ $manualList = [
     'SamEdits/32x32-add-cache.svg' =>                                          ['group' => 'misc', 'newName' => 'add_cache-monochrome.svg'],
     'SamEdits/event.svg' =>                                                    ['group' => 'misc', 'newName' => 'event-monochrome.svg'],
     'SamEdits/32x32-checked.svg' =>                                            ['group' => 'misc', 'newName' => 'checked-monochrome.svg'],
-    'SamEdits/20x20-cache-note.svg' =>                                         ['group' => 'misc', 'newName' => 'cache_note-monochrome.svg'],
     'SamEdits/maintenance.svg' =>                                              ['group' => 'misc', 'newName' => 'maintenance-monochrome.svg'],
 
     'OC_Icons_Dez_2021_+_Attributs/map/35x35-gpx-download.svg' =>    ['group' => 'misc', 'newName' => 'gpx_download-enabled.svg'],
     'OC_Icons_Dez_2021_+_Attributs/map/35x35-no-gpx-download.svg' => ['group' => 'misc', 'newName' => 'gpx_download-disabled.svg'],
     'OC_Icons_Dez_2021_+_Attributs/map/48x48-fullscreen.svg' =>      ['group' => 'misc', 'newName' => 'fullscreen-on.svg'],
     'OC_Icons_Dez_2021_+_Attributs/map/35x35-normalscreen.svg' =>    ['group' => 'misc', 'newName' => 'fullscreen-off.svg'],
-    'OC_Icons_Dez_2021_+_Attributs/map/35x35-star.svg' =>            ['group' => 'misc', 'newName' => 'directlink.svg'],
-    'OC_Icons_Dez_2021_+_Attributs/misc/32x32-help.svg' =>           ['group' => 'misc', 'newName' => 'help.svg'],
+    'OC_Icons_Dez_2021_+_Attributs/map/35x35-star.svg' =>            ['group' => 'misc', 'newName' => 'star.svg'],
+    'OC_Icons_Dez_2021_+_Attributs/misc/32x32-help.svg' =>           ['group' => 'misc', 'newName' => 'circle-help.svg'],
     'OC_Icons_Dez_2021_+_Attributs/map/35x35-configure.svg' =>       ['group' => 'misc', 'newName' => 'configure.svg'],
 
     'OC_Icons_Dez_2021_+_Attributs/action/16x16-delete.svg' =>                 ['group' => 'misc', 'newName' => 'trash_bin-monochrome.svg'],
-    'OC_Icons_Dez_2021_+_Attributs/action/16x16-encrypt.svg' =>                ['group' => 'misc', 'newName' => 'encrypt.svg'],
+    'OC_Icons_Dez_2021_+_Attributs/action/16x16-encrypt.svg' =>                ['group' => 'misc', 'newName' => 'encrypt-monochrome.svg'],
     'OC_Icons_Dez_2021_+_Attributs/action/16x16-find.svg' =>                   ['group' => 'misc', 'newName' => 'lens-empty-monochrome.svg'],
     'SamEdits/32x32-ignore.svg' =>                                             ['group' => 'misc', 'newName' => 'lens-thin-x-monochrome.svg'],
     'OC_Icons_Dez_2021_+_Attributs/misc/32x32-ignore.svg' =>                   ['group' => 'misc', 'newName' => 'lens-thin-x.svg'],
@@ -293,76 +294,75 @@ $manualList = [
     'OC_Icons_Dez_2021_+_Attributs/action/16x16-ignorenot.svg' =>              ['group' => 'misc', 'newName' => 'lens-green.svg'],
     'OC_Icons_Dez_2021_+_Attributs/viewcache/16x16-search.svg' =>              ['group' => 'misc', 'newName' => 'lens-grey.svg'],
     'OC_Icons_Dez_2021_+_Attributs/misc/32x32-search.svg' =>                   ['group' => 'misc', 'newName' => 'lens-thin-empty.svg'],
-    'OC_Icons_Dez_2021_+_Attributs/action/16x16-imagetext.svg' =>              ['group' => 'misc', 'newName' => 'image_text.svg'],
+    'OC_Icons_Dez_2021_+_Attributs/action/16x16-imagetext.svg' =>              ['group' => 'misc', 'newName' => 'image_text-monochrome.svg'],
     'OC_Icons_Dez_2021_+_Attributs/action/16x16-print.svg' =>                  ['group' => 'misc', 'newName' => 'print.svg'],
-    'OC_Icons_Dez_2021_+_Attributs/action/16x16-properties.svg' =>             ['group' => 'misc', 'newName' => 'properties.svg'],
-    'OC_Icons_Dez_2021_+_Attributs/action/16x16-showall.svg' =>                ['group' => 'misc', 'newName' => 'show_all.svg'],
-    'OC_Icons_Dez_2021_+_Attributs/action/16x16-watchnot.svg' =>               ['group' => 'misc', 'newName' => 'watchnot.svg'],
+    'OC_Icons_Dez_2021_+_Attributs/action/16x16-properties.svg' =>             ['group' => 'misc', 'newName' => 'wrench-monochrome.svg'],
+    'OC_Icons_Dez_2021_+_Attributs/action/16x16-showall.svg' =>                ['group' => 'misc', 'newName' => 'show_all-monochrome.svg'],
     'OC_Icons_Dez_2021_+_Attributs/action/18x16-offer.svg' =>                  ['group' => 'misc', 'newName' => 'hand_offer-monochrome.svg'],
-    'OC_Icons_Dez_2021_+_Attributs/cachestatus/16x16-trash.svg' =>             ['group' => 'misc', 'newName' => 'trash.svg'],
     'OC_Icons_Dez_2021_+_Attributs/cachestatus/32x32-disabled.svg' =>          ['group' => 'misc', 'newName' => 'disabled.svg'],
-    'OC_Icons_Dez_2021_+_Attributs/description/22x22-description.svg' =>       ['group' => 'misc', 'newName' => 'description.svg'],
-    'OC_Icons_Dez_2021_+_Attributs/description/22x22-encrypted.svg' =>         ['group' => 'misc', 'newName' => 'encrypted.svg'],
-    'OC_Icons_Dez_2021_+_Attributs/description/22x22-image.svg' =>             ['group' => 'misc', 'newName' => 'image.svg'],
+    'OC_Icons_Dez_2021_+_Attributs/description/22x22-description.svg' =>       ['group' => 'misc', 'newName' => 'description-monochrome.svg'],
+    'OC_Icons_Dez_2021_+_Attributs/description/22x22-encrypted.svg' =>         ['group' => 'misc', 'newName' => 'encrypted-monochrome.svg'],
+    'OC_Icons_Dez_2021_+_Attributs/description/22x22-image.svg' =>             ['group' => 'misc', 'newName' => 'image-monochrome.svg'],
     'OC_Icons_Dez_2021_+_Attributs/description/22x22-location.svg' =>          ['group' => 'misc', 'newName' => 'location.svg'],
-    'OC_Icons_Dez_2021_+_Attributs/description/22x22-misc.svg' =>              ['group' => 'misc', 'newName' => 'circle-three_dots-monochrome.svg'],
-    'OC_Icons_Dez_2021_+_Attributs/description/22x22-utility.svg' =>           ['group' => 'misc', 'newName' => 'utility.svg'],
+    'OC_Icons_Dez_2021_+_Attributs/description/22x22-utility.svg' =>           ['group' => 'misc', 'newName' => 'hand-monochrome.svg'],
     'OC_Icons_Dez_2021_+_Attributs/log/16x16-listing-outdated-no.svg' =>       ['group' => 'misc', 'newName' => 'listing_outdated-no.svg'],
     'OC_Icons_Dez_2021_+_Attributs/log/16x16-listing-outdated.svg' =>          ['group' => 'misc', 'newName' => 'listing_outdated-yes.svg'],
     'OC_Icons_Dez_2021_+_Attributs/map/32x32-left.svg' =>                      ['group' => 'misc', 'newName' => 'point_left.svg'],
     'OC_Icons_Dez_2021_+_Attributs/map/32x32-right.svg' =>                     ['group' => 'misc', 'newName' => 'point_right.svg'],
     'OC_Icons_Dez_2021_+_Attributs/map/coordinate-marker.svg' =>               ['group' => 'misc', 'newName' => 'coordinate-marker.svg'],
-    'OC_Icons_Dez_2021_+_Attributs/misc/16x16-email.svg' =>                    ['group' => 'misc', 'newName' => 'email.svg'],
-    'OC_Icons_Dez_2021_+_Attributs/misc/16x16-flag-checker.svg' =>             ['group' => 'misc', 'newName' => 'flag-checker.svg'],
-    'OC_Icons_Dez_2021_+_Attributs/misc/16x16-footprints.svg' =>               ['group' => 'misc', 'newName' => 'footprints.svg'],
+    'OC_Icons_Dez_2021_+_Attributs/misc/16x16-email.svg' =>                    ['group' => 'misc', 'newName' => 'email-monochrome.svg'],
+    'OC_Icons_Dez_2021_+_Attributs/misc/16x16-flag-checker.svg' =>             ['group' => 'misc', 'newName' => 'flag-checker-monochrome.svg'],
+    'OC_Icons_Dez_2021_+_Attributs/misc/16x16-footprints.svg' =>               ['group' => 'misc', 'newName' => 'footprints-monochrome.svg'],
     'OC_Icons_Dez_2021_+_Attributs/misc/16x16-list.svg' =>                     ['group' => 'misc', 'newName' => 'list-three.svg'],
     'OC_Icons_Dez_2021_+_Attributs/misc/32x32-list.svg' =>                     ['group' => 'misc', 'newName' => 'list-four.svg'],
-    'OC_Icons_Dez_2021_+_Attributs/misc/16x16-locked.svg' =>                   ['group' => 'misc', 'newName' => 'lock-grey.svg'],
-    'OC_Icons_Dez_2021_+_Attributs/misc/22x22-traditional.svg' =>              ['group' => 'misc', 'newName' => 'traditional.svg'],
-    'OC_Icons_Dez_2021_+_Attributs/misc/25x25-world.svg' =>                    ['group' => 'misc', 'newName' => 'world.svg'],
+    'OC_Icons_Dez_2021_+_Attributs/misc/22x22-traditional.svg' =>              ['group' => 'misc', 'newName' => 'geocache-monochrome.svg'],
+    'OC_Icons_Dez_2021_+_Attributs/misc/25x25-world.svg' =>                    ['group' => 'misc', 'newName' => 'world-monochrome.svg'],
     'OC_Icons_Dez_2021_+_Attributs/misc/32x32-checked.svg' =>                  ['group' => 'misc', 'newName' => 'checked.svg'],
     'OC_Icons_Dez_2021_+_Attributs/misc/32x32-gears.svg' =>                    ['group' => 'misc', 'newName' => 'ghost-monochrome.svg'],
-    'OC_Icons_Dez_2021_+_Attributs/misc/32x32-home.svg' =>                     ['group' => 'misc', 'newName' => 'home.svg'],
+    'OC_Icons_Dez_2021_+_Attributs/misc/32x32-home.svg' =>                     ['group' => 'misc', 'newName' => 'home-monochrome.svg'],
     'OC_Icons_Dez_2021_+_Attributs/misc/32x32-impressum.svg' =>                ['group' => 'misc', 'newName' => 'important.svg'],
     'OC_Icons_Dez_2021_+_Attributs/misc/32x32-news.svg' =>                     ['group' => 'misc', 'newName' => 'megaphone-monochrome.svg'],
-    'OC_Icons_Dez_2021_+_Attributs/misc/32x32-profile.svg' =>                  ['group' => 'misc', 'newName' => 'profile.svg'],
-    'OC_Icons_Dez_2021_+_Attributs/misc/32x32-searchresults.svg' =>            ['group' => 'misc', 'newName' => 'search_results.svg'],
-    'OC_Icons_Dez_2021_+_Attributs/misc/32x32-tools.svg' =>                    ['group' => 'misc', 'newName' => 'tools.svg'],
+    'OC_Icons_Dez_2021_+_Attributs/misc/32x32-profile.svg' =>                  ['group' => 'misc', 'newName' => 'profile-monochrome.svg'],
+    'OC_Icons_Dez_2021_+_Attributs/misc/32x32-searchresults.svg' =>            ['group' => 'misc', 'newName' => 'search_results-monochrome.svg'],
+    'OC_Icons_Dez_2021_+_Attributs/misc/32x32-tools.svg' =>                    ['group' => 'misc', 'newName' => 'tools-monochrome.svg'],
     'OC_Icons_Dez_2021_+_Attributs/misc/hint-link.svg' =>                      ['group' => 'misc', 'newName' => 'hint-link.svg'],
     'OC_Icons_Dez_2021_+_Attributs/misc/hint.svg' =>                           ['group' => 'misc', 'newName' => 'hint.svg'],
     'OC_Icons_Dez_2021_+_Attributs/misc/linkicon.svg' =>                       ['group' => 'misc', 'newName' => 'link_external.svg'],
     'OC_Icons_Dez_2021_+_Attributs/profile/32x32-adopt.svg' =>                 ['group' => 'misc', 'newName' => 'adopt.svg'],
-    'OC_Icons_Dez_2021_+_Attributs/profile/32x32-statistic.svg' =>             ['group' => 'misc', 'newName' => 'statistic.svg'],
-    'OC_Icons_Dez_2021_+_Attributs/profile/32x32-statistic2.svg' =>            ['group' => 'misc', 'newName' => 'statistic2.svg'],
+    'OC_Icons_Dez_2021_+_Attributs/profile/32x32-statistic.svg' =>             ['group' => 'misc', 'newName' => 'statistic-monochrome.svg'],
+    'OC_Icons_Dez_2021_+_Attributs/profile/32x32-statistic2.svg' =>            ['group' => 'misc', 'newName' => 'award-monochrome.svg'],
     'OC_Icons_Dez_2021_+_Attributs/viewcache/14x19-gps-device.svg' =>          ['group' => 'misc', 'newName' => 'gps_device.svg'],
-    'OC_Icons_Dez_2021_+_Attributs/viewcache/16x16-dnf.svg' =>                 ['group' => 'misc', 'newName' => 'circle-dnf.svg'],
+    'OC_Icons_Dez_2021_+_Attributs/description/22x22-misc.svg' =>              ['group' => 'misc', 'newName' => 'circle-three_dots-monochrome.svg'],
+    'OC_Icons_Dez_2021_+_Attributs/viewcache/16x16-dnf.svg' =>                 ['group' => 'misc', 'newName' => 'circle-dash.svg'],
     'OC_Icons_Dez_2021_+_Attributs/viewcache/16x16-found.svg' =>               ['group' => 'misc', 'newName' => 'circle-checked.svg'],
     'OC_Icons_Dez_2021_+_Attributs/viewcache/ignore-16.svg' =>                 ['group' => 'misc', 'newName' => 'circle-x.svg'],
     'OC_Icons_Dez_2021_+_Attributs/viewcache/report-problem-18.svg' =>         ['group' => 'misc', 'newName' => 'circle-bang.svg', 'note' => 'Image needs trimming.'],
     'OC_Icons_Dez_2021_+_Attributs/viewcache/16x16-info.svg' =>                ['group' => 'misc', 'newName' => 'circle-i.svg'],
     'OC_Icons_Dez_2021_+_Attributs/viewcache/16x16-maintenance_shifted.svg' => ['group' => 'misc', 'newName' => 'maintenance_shifted.svg'],
     'OC_Icons_Dez_2021_+_Attributs/viewcache/16x16-note.svg' =>                ['group' => 'misc', 'newName' => 'pencil-monocrome.svg'],
-    'OC_Icons_Dez_2021_+_Attributs/viewcache/16x16-pictures.svg' =>            ['group' => 'misc', 'newName' => 'pictures.svg'],
+    'OC_Icons_Dez_2021_+_Attributs/viewcache/16x16-pictures.svg' =>            ['group' => 'misc', 'newName' => 'pictures-monocrome.svg'],
     'OC_Icons_Dez_2021_+_Attributs/viewcache/16x16-save.svg' =>                ['group' => 'misc', 'newName' => 'save.svg'],
-    'OC_Icons_Dez_2021_+_Attributs/viewcache/16x16-watch.svg' =>               ['group' => 'misc', 'newName' => 'watch.svg'],
+    'OC_Icons_Dez_2021_+_Attributs/viewcache/16x16-watch.svg' =>               ['group' => 'misc', 'newName' => 'watch-monochrome.svg'],
+    'OC_Icons_Dez_2021_+_Attributs/action/16x16-watchnot.svg' =>               ['group' => 'misc', 'newName' => 'watchnot.svg'],
     'OC_Icons_Dez_2021_+_Attributs/viewcache/arrow_in.svg' =>                  ['group' => 'misc', 'newName' => 'document.svg'],
     'OC_Icons_Dez_2021_+_Attributs/viewcache/arrow_roundtrip.svg' =>           ['group' => 'misc', 'newName' => 'arrow_roundtrip.svg'],
     'OC_Icons_Dez_2021_+_Attributs/viewcache/arrow_switch.svg' =>              ['group' => 'misc', 'newName' => 'arrow_switch.svg'],
     'OC_Icons_Dez_2021_+_Attributs/viewcache/date.svg' =>                      ['group' => 'misc', 'newName' => 'date.svg'],
     'OC_Icons_Dez_2021_+_Attributs/viewcache/kompass.svg' =>                   ['group' => 'misc', 'newName' => 'map_marker-monochrome.svg'],
     'OC_Icons_Dez_2021_+_Attributs/viewcache/link.svg' =>                      ['group' => 'misc', 'newName' => 'link.svg'],
-    'OC_Icons_Dez_2021_+_Attributs/viewcache/list-add-18.svg' =>               ['group' => 'misc', 'newName' => 'list-add.svg'],
+    'OC_Icons_Dez_2021_+_Attributs/viewcache/list-add-18.svg' =>               ['group' => 'misc', 'newName' => 'plus.svg'],
     'OC_Icons_Dez_2021_+_Attributs/viewcache/logs.svg' =>                      ['group' => 'misc', 'newName' => 'notebook-monochrome.svg'],
     'OC_Icons_Dez_2021_+_Attributs/viewcache/map.svg' =>                       ['group' => 'misc', 'newName' => 'map.svg'],
     'OC_Icons_Dez_2021_+_Attributs/viewcache/new-entry-18.svg' =>              ['group' => 'misc', 'newName' => 'new-entry.svg'],
     'OC_Icons_Dez_2021_+_Attributs/viewcache/npa.svg' =>                       ['group' => 'misc', 'newName' => 'npa.svg'],
-    'OC_Icons_Dez_2021_+_Attributs/viewcache/package_green.svg' =>             ['group' => 'misc', 'newName' => 'package_green.svg'],
+    'OC_Icons_Dez_2021_+_Attributs/viewcache/package_green.svg' =>             ['group' => 'misc', 'newName' => 'geocache.svg'],
     'OC_Icons_Dez_2021_+_Attributs/viewcache/page.svg' =>                      ['group' => 'misc', 'newName' => 'page.svg'],
     'OC_Icons_Dez_2021_+_Attributs/viewcache/time.svg' =>                      ['group' => 'misc', 'newName' => 'clock.svg'],
 
-    'OC_Icons_Dez_2021_+_Attributs/viewcache/decrypt.svg' =>                   ['group' => 'misc', 'newName' => 'key.svg'],
-    'OC_Icons_Dez_2021_+_Attributs/description/22x22-decrypted.svg' =>         ['group' => 'misc', 'newName' => 'lock-open.svg'],
-    'OC_Icons_Dez_2021_+_Attributs/profile/32x32-security.svg' =>              ['group' => 'misc', 'newName' => 'lock-closed.svg'],
+    'OC_Icons_Dez_2021_+_Attributs/viewcache/decrypt.svg' =>                   ['group' => 'misc', 'newName' => 'key-monochrome.svg'],
+    'OC_Icons_Dez_2021_+_Attributs/description/22x22-decrypted.svg' =>         ['group' => 'misc', 'newName' => 'lock-open-monochrome.svg'],
+    'OC_Icons_Dez_2021_+_Attributs/profile/32x32-security.svg' =>              ['group' => 'misc', 'newName' => 'lock-closed-monochrome.svg'],
+    'OC_Icons_Dez_2021_+_Attributs/misc/16x16-locked.svg' =>                   ['group' => 'misc', 'newName' => 'lock-closed.svg'],
 ];
 
 $otherFiles = [];
@@ -448,7 +448,7 @@ foreach($files as $file) {
 
     elseif (preg_match('#/attributes/#', $file)) {
         $svg['group'] = 'attributes';
-        $name = explode('-', str_replace(['.svg', 'blind-people'], ['', 'blind-people'], basename($file)));
+        $name = explode('-', str_replace(['.svg', 'blind-people'], ['', 'blind_people'], basename($file)));
         #$svg['note'] = var_export($name, true);
         $type = $name[0];
         $status = $name[1]??'yes';
@@ -561,7 +561,7 @@ foreach ($svgFiles as $no => $data) {
             $data['note'] = sprintf('New Name is shared with [%s]. %s', $uniqName[$data['newName']], $data['note']??'');
         }
     }
-    if ($c_compact && in_array($data['group']??'', ['attributes', 'cacheTypes', 'ratings', 'thirdparties', 'directions', 'naviga-tion', 'flags', 'oclogos', 'wayPointTypes',])){
+    if ($c_compact && in_array($data['group']??'', ['attributes', 'cacheTypes', 'directions', 'flags', 'logTypes', 'misc', 'navigation', 'oclogos', 'ratings', 'thirdparties', 'wayPointTypes',])){
         continue;
     }
     $id = '';
