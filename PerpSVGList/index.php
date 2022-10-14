@@ -106,6 +106,7 @@ $duplicated = [
     'OC_Icons_Dez_2021_+_Attributs/cacheicon/22x22-event.svg' => 'OC_Icons_Dez_2021_+_Attributs/cacheicon/event.svg',
     'OC_Icons_Dez_2021_+_Attributs/cacheicon/cache/22x22-event.svg' => 'OC_Icons_Dez_2021_+_Attributs/cacheicon/event.svg',
     'OC_Icons_Dez_2021_+_Attributs/cacheicon/16x16-moving.svg' => 'OC_Icons_Dez_2021_+_Attributs/cacheicon/moving.svg',
+    'OC_Icons_Dez_2021_+_Attributs/cacheicon/mocache.svg' => 'OC_Icons_Dez_2021_+_Attributs/cacheicon/moving.svg',
     'OC_Icons_Dez_2021_+_Attributs/cacheicon/16x16-multi.svg' => 'OC_Icons_Dez_2021_+_Attributs/cacheicon/multi.svg',
     'OC_Icons_Dez_2021_+_Attributs/cacheicon/16x16-traditional.svg' => 'OC_Icons_Dez_2021_+_Attributs/cacheicon/traditional-s.svg',
     'OC_Icons_Dez_2021_+_Attributs/cacheicon/22x22-traditional.svg' => 'OC_Icons_Dez_2021_+_Attributs/cacheicon/traditional-s.svg',
@@ -237,7 +238,7 @@ $manualList = [
     'OC_Icons_Dez_2021_+_Attributs/fr.svg' => ['group' => 'flags', 'newName' => 'fr.svg', 'note' => 'Image has unclear edge'],
     'OC_Icons_Dez_2021_+_Attributs/oc_404.svg' => ['group' => 'navigation', 'newName' => 'error404.svg', 'note' => 'Image needs trimming'],
     'OC_Icons_Dez_2021_+_Attributs/action/15x13-logout.svg' => ['group' => 'navigation', 'newName' => 'button-logout.svg'],
-    'OC_Icons_Dez_2021_+_Attributs/navigation/23x23-close.svg' => ['group' => 'navigation', 'newName' => 'button-close.vg'],
+    'OC_Icons_Dez_2021_+_Attributs/navigation/23x23-close.svg' => ['group' => 'navigation', 'newName' => 'button-close.svg'],
 
     'OC_Icons_Dez_2021_+_Attributs/misc/is_oconly.svg' => ['group' => 'oclogos', 'newName' => 'oconly.svg'],
     'OC_Icons_Dez_2021_+_Attributs/misc/15x15-oc.svg' =>  ['group' => 'misc', 'newName' => 'circle-oc.svg'],
@@ -339,8 +340,8 @@ $manualList = [
     'OC_Icons_Dez_2021_+_Attributs/viewcache/report-problem-18.svg' =>         ['group' => 'misc', 'newName' => 'circle-bang.svg', 'note' => 'Image needs trimming.'],
     'OC_Icons_Dez_2021_+_Attributs/viewcache/16x16-info.svg' =>                ['group' => 'misc', 'newName' => 'circle-i.svg'],
     'OC_Icons_Dez_2021_+_Attributs/viewcache/16x16-maintenance_shifted.svg' => ['group' => 'misc', 'newName' => 'maintenance_shifted.svg'],
-    'OC_Icons_Dez_2021_+_Attributs/viewcache/16x16-note.svg' =>                ['group' => 'misc', 'newName' => 'pencil-monocrome.svg'],
-    'OC_Icons_Dez_2021_+_Attributs/viewcache/16x16-pictures.svg' =>            ['group' => 'misc', 'newName' => 'pictures-monocrome.svg'],
+    'OC_Icons_Dez_2021_+_Attributs/viewcache/16x16-note.svg' =>                ['group' => 'misc', 'newName' => 'pencil-monochrome.svg'],
+    'OC_Icons_Dez_2021_+_Attributs/viewcache/16x16-pictures.svg' =>            ['group' => 'misc', 'newName' => 'pictures-monochrome.svg'],
     'OC_Icons_Dez_2021_+_Attributs/viewcache/16x16-save.svg' =>                ['group' => 'misc', 'newName' => 'save.svg'],
     'OC_Icons_Dez_2021_+_Attributs/viewcache/16x16-watch.svg' =>               ['group' => 'misc', 'newName' => 'watch-monochrome.svg'],
     'OC_Icons_Dez_2021_+_Attributs/action/16x16-watchnot.svg' =>               ['group' => 'misc', 'newName' => 'watchnot.svg'],
@@ -373,7 +374,7 @@ $notSorted = [];
 
 $groupSort = '000_%s_%s';
 
-$files = explode(PHP_EOL."./", trim(`find . -type f`));
+$files = explode(PHP_EOL."./", trim(`find . -type f -not -path './OC_Icons_Sep_2022/*'`));
 foreach($files as $file) {
     if (isset($duplicated[$file])) {
         continue;
@@ -518,7 +519,7 @@ usort($svgFilesNoUse, $sortBySort);
         body{background-color: #0f253c; color: wheat;}
         table,tr,td{padding: 6px; border: 1px solid black;}
         a:link, a:active, a:focus, a:visited, a:hover {color:wheat;}
-        img{max-height: 300px;}
+        img{max-height: 300px; border: 1px solid pink;}
     </style>
 </head>
 <body>
@@ -547,9 +548,9 @@ usort($svgFilesNoUse, $sortBySort);
 <?php
 
 print '<h2>'.count($svgFiles).' SVGs</h2>'.PHP_EOL.'<table>'.PHP_EOL;
-print '<tr><th>ID</th><th>Thumb</th><th>Current Path</th><th>Group / Directory</th><th>New name</th><th>Note</th><th>Other</th></tr>'.PHP_EOL;
-$line  = '<tr%6$s><td>S%1$\'.03d</td><td><img src="%2$s" width="100" /></td><td>%2$s</td><td>%4$s</td><td>%5$s</td><td>%3$s</td><td></td></tr>'.PHP_EOL;
-$lineD = '<tr%6$s><td>S%1$\'.03d</td><td><img src="%2$s" width="100" /></td><td>%2$s</td><td>%4$s</td><td>%5$s</td><td>Maybe Duplicate of %3$s</td><td><img src="%3$s" width="100" /></td></tr>'.PHP_EOL;
+print '<tr><th>ID</th><th>Final</th><th>Thumb</th><th>Current Path</th><th>Group / Directory</th><th>New name</th><th>Note</th><th>Other</th></tr>'.PHP_EOL;
+$line  = '<tr%6$s><td>S%1$\'.03d</td><td><img src="%7$s" width="100" /></td><td><img src="%2$s" width="100" /></td><td>%2$s</td><td>%4$s</td><td>%5$s</td><td>%3$s</td><td></td></tr>'.PHP_EOL;
+$lineD = '<tr%6$s><td>S%1$\'.03d</td><td><img src="%7$s" width="100" /></td><td><img src="%2$s" width="100" /></td><td>%2$s</td><td>%4$s</td><td>%5$s</td><td>Maybe Duplicate of %3$s</td><td><img src="%3$s" width="100" /></td></tr>'.PHP_EOL;
 $lastGroup = '';
 $uniqName = [];
 foreach ($svgFiles as $no => $data) {
@@ -577,6 +578,7 @@ foreach ($svgFiles as $no => $data) {
         $data['group'] ?? '',
         $data['newName'] ?? '',
         $id,
+        'OC_Icons_Sep_2022/'.$data['group'].'/'.$data['newName'],
     );
 }
 print '</table>'.PHP_EOL.PHP_EOL;
