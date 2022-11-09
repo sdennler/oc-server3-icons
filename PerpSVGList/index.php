@@ -374,7 +374,7 @@ $notSorted = [];
 
 $groupSort = '000_%s_%s';
 
-$files = explode(PHP_EOL."./", trim(`find . -type f -not -path './OC_Icons_Sep_2022/*'`));
+$files = explode(PHP_EOL."./", trim(`find . -type f -not -path './OC_Icons_*2022/*'`));
 foreach($files as $file) {
     if (isset($duplicated[$file])) {
         continue;
@@ -578,7 +578,7 @@ foreach ($svgFiles as $no => $data) {
         $data['group'] ?? '',
         $data['newName'] ?? '',
         $id,
-        'OC_Icons_Sep_2022/'.$data['group'].'/'.$data['newName'],
+        'OC_Icons_Okt_2022/'.$data['group'].'/'.$data['newName'],
     );
 }
 print '</table>'.PHP_EOL.PHP_EOL;
